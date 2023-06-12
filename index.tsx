@@ -35,7 +35,9 @@ function App() {
             key={idx}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
-                setItems([...items, { content: "", focus: true }]);
+                let tempItems = [...items];
+                tempItems[idx].content += " ";
+                setItems([...tempItems, { content: "", focus: true }]);
               }
               if (event.key === "Backspace") {
                 let tempItems = [...items];

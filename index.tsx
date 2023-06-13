@@ -8,7 +8,8 @@ import {
   useParams,
 } from "react-router-dom";
 
-new EventSource("/esbuild").addEventListener("change", () => location.reload());
+// Uncomment during development
+// new EventSource("/esbuild").addEventListener("change", () => location.reload());
 
 type Item = {
   content: string;

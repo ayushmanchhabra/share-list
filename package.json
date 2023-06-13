@@ -10,6 +10,7 @@
     "fmt": "prettier --write .",
     "dev": "esbuild index.tsx --bundle --target=es2022 --outfile=index.js --watch --servedir=.",
     "bld": "esbuild index.tsx --bundle --minify --target=es2022 --outfile=index.js",
+    "exe": "gh-pages -d . -b daily",
     "start": "pnpm dev"
   },
   "devDependencies": {
@@ -18,6 +19,7 @@
     "@types/react-dom": "^18.2.5",
     "esbuild": "~0.18.2",
     "eslint": "^8.42.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

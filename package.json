@@ -10,7 +10,7 @@
     "fmt": "prettier --write .",
     "start": "esbuild index.tsx --bundle --target=es2022 --outfile=index.js --watch --servedir=.",
     "bld": "esbuild index.tsx --bundle --minify --target=es2022 --outfile=index.js",
-    "exe": "gh-pages -d . -b daily",
+    "exe": "gh-pages -d . -b daily"
   },
   "devDependencies": {
     "@types/node": "^20.3.1",

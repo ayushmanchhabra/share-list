@@ -1,4 +1,4 @@
-import { StrictMode, useState } from "react";
+import { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 new EventSource("/esbuild").addEventListener("change", () => location.reload());
@@ -9,7 +9,7 @@ type Item = {
 };
 
 function App() {
-  const [name, setName] = useState<Item>({} as Item);
+  const [name, setName] = useState<Item>({ content: "", focus: true });
   const [items, setItems] = useState<Item[]>([]);
 
   return (
@@ -20,6 +20,7 @@ function App() {
         onChange={(e) => setName({ content: e.target.value, focus: true })}
         onKeyDown={(event) => {
           if (event.key === "Enter" && items.length === 0) {
+            setName({ ...name, content: name.content + " " });
             setItems([{ content: "", focus: true }]);
           }
         }}
@@ -42,7 +43,7 @@ function App() {
               if (event.key === "Backspace") {
                 let tempItems = [...items];
                 let item = tempItems[idx];
-                if (item.content.length === 0 && idx > 0) {
+                if (item.content.length === 0 && idx >= 0) {
                   event.currentTarget.blur();
                   const prev = event.currentTarget
                     .previousSibling as HTMLElement;
@@ -69,9 +70,5 @@ function App() {
 const root: HTMLElement | null = document.getElementById("root");
 
 if (root !== null) {
-  createRoot(root).render(
-    <StrictMode>
-      <App />
-    </StrictMode>
-  );
+  createRoot(root).render(<App />);
 }

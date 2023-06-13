@@ -1,0 +1,29 @@
+name: daily
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  doc:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node-version: "20.3.0"
+
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Activate pnpm
+        run: corepack prepare pnpm@latest --activate
+      - name: Install Node modules
+        run: pnpm install
+      - name: Build app
+        run: pnpm bld
+      - name: Publish app to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: daily
+          publish_dir: ./

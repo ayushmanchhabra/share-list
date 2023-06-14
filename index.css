@@ -31,13 +31,15 @@ div {
 
   margin: 0px;
   padding: 0px;
-  border-style: none;
-  border-bottom-style: solid;
-  border-color: lightgray;
-  border-width: 1px;
+  border: none;
 
   font-size: 25px;
+  font-weight: 700;
   color: grey;
+}
+
+.title::placeholder {
+  color: lightgrey;
 }
 
 input:focus {

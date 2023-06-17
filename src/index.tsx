@@ -65,6 +65,7 @@ function App() {
             <input
               autoFocus={item.focus}
               className={"title"}
+              key={idx}
               onChange={(event) => {
                 let tempItems = [...items];
                 tempItems[idx].content = event.target.value;

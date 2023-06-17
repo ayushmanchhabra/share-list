@@ -8,22 +8,21 @@
   },
   "scripts": {
     "fmt": "prettier --write .",
-    "start": "esbuild index.tsx --bundle --target=es2022 --outfile=index.js --watch --servedir=.",
-    "bld": "esbuild index.tsx --bundle --minify --target=es2022 --outfile=index.js",
-    "exe": "gh-pages -d . -b daily"
+    "start": "esbuild src/index.tsx --bundle --target=es2022 --outfile=src/index.js --watch --servedir=src",
+    "bld": "esbuild src/index.tsx --bundle --minify --target=es2022 --outfile=out/index.js",
+    "ghp": "gh-pages -d src -b daily"
   },
   "devDependencies": {
-    "@types/node": "^20.3.1",
-    "@types/react": "^18.2.12",
-    "@types/react-dom": "^18.2.5",
-    "esbuild": "~0.18.2",
-    "eslint": "^8.42.0",
-    "gh-pages": "^5.0.0",
-    "prettier": "^2.8.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.12.1",
-    "serve": "^14.2.0",
-    "typescript": "^5.1.3"
+    "@types/node": "20.3.1",
+    "@types/react": "18.2.12",
+    "@types/react-dom": "18.2.5",
+    "esbuild": "0.18.4",
+    "eslint": "8.43.0",
+    "gh-pages": "5.0.0",
+    "prettier": "2.8.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.13.0",
+    "typescript": "5.1.3"
   }
 }

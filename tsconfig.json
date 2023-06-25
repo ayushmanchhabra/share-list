@@ -1,4 +1,5 @@
 {
+  "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -12,11 +13,18 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "components": ["components/index.ts"],
+      "providers": ["providers/index.ts"],
+      "schema": ["schema/index.ts"]
+    },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "typeRoots": ["./src/types"]
   },
   "include": ["src"],
   "references": [

@@ -1,8 +1,36 @@
 {
+  "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
-    "module": "ES2022",
-    "target": "ES2022",
-    "moduleResolution": "nodenext",
-    "jsx": "react-jsx"
-  }
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "components": ["components/index.ts"],
+      "providers": ["providers/index.ts"],
+      "schema": ["schema/index.ts"]
+    },
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "typeRoots": ["./src/types"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "out"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

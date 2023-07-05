@@ -5,7 +5,7 @@
   "type": "module",
   "engines": {
     "node": ">=v20.3.1",
-    "pnpm": "8.6.3"
+    "pnpm": "8.6.6"
   },
   "scripts": {
     "fmt": "prettier --write .",

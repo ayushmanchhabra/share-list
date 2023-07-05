@@ -2,6 +2,7 @@ import { PlaylistSchema } from "schema";
 
 export const dummy: PlaylistSchema = {
   title: "Jazz",
+  focus: false,
   songs: [
     {
       title: "Far More Blue",

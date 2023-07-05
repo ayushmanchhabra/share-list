@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { IconButton, Typography } from "@mui/material";
-import {
-  FileUpload as FileUploadIcon,
-  GetApp as GetAppIcon,
-  Login as LoginIcon,
-  Share as ShareIcon,
-} from "@mui/icons-material";
 
 import { deserialise, serialise } from "providers";
 import { PlaylistSchema, SongSchema } from "schema";
@@ -45,7 +38,7 @@ export function App() {
         }
       }}
     >
-      {/* <input
+      <input
         autoFocus={playlist.focus}
         className={"title"}
         onChange={(event) => {
@@ -63,32 +56,7 @@ export function App() {
         placeholder={"Untitled"}
         type="text"
         value={playlist.title}
-      /> */}
-      <Typography className="title">Share List</Typography>
-      <Typography>
-        <IconButton style={{ height: 40, width: 40 }}>
-          <LoginIcon style={{ height: 25, width: 25 }} />
-        </IconButton>
-        Create playlist
-      </Typography>
-      <Typography>
-        <IconButton style={{ height: 40, width: 40 }}>
-          <ShareIcon style={{ height: 25, width: 25 }} />
-        </IconButton>
-        Share playlist
-      </Typography>
-      <Typography>
-        <IconButton style={{ height: 40, width: 40 }}>
-          <GetAppIcon style={{ height: 25, width: 25 }} />
-        </IconButton>
-        Import playlist
-      </Typography>
-      <Typography>
-        <IconButton style={{ height: 40, width: 40 }}>
-          <FileUploadIcon style={{ height: 25, width: 25 }} />
-        </IconButton>
-        Export playlist
-      </Typography>
+      />
 
       {playlist.songs.map((item: SongSchema, idx: number) => {
         return (

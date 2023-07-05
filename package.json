@@ -10,8 +10,8 @@
   "scripts": {
     "fmt": "prettier --write .",
     "dev": "vite",
-    "bld": "vite build",
-    "ghp": "gh-pages -d src -b daily"
+    "bld": "vite build -d out",
+    "ghp": "gh-pages -d out -b daily"
   },
   "dependencies": {
     "@emotion/react": "11.11.1",

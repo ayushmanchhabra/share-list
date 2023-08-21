@@ -1,0 +1,28 @@
+name: main
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.3.0
+      - name: Get Node version from Node manifest
+        run: |
+          echo "NODE_VER=$(jq -r '.engines.node' package.json | sed 's/v//' )" >> $GITHUB_ENV
+      - uses: actions/checkout@v3.5.3
+      - uses: actions/setup-node@v3.8.1
+        with:
+          node-version: ${{ env.NODE_VER }}
+
+      - name: Enable corepack
+        run: corepack enable
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+      - name: Build project
+        run: pnpm bld

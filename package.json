@@ -12,7 +12,7 @@
     "fmt": "prettier --write .",
     "dev": "vite",
     "bld": "vite build -d out",
-    "ghp": "gh-pages -d out -b daily"
+    "e2e": ""
   },
   "dependencies": {
     "react": "18.2.0",

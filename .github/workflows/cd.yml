@@ -1,13 +1,11 @@
-name: main
+name: gha
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  test:
+  cd:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
@@ -20,10 +18,15 @@ jobs:
         with:
           node-version: ${{ env.NODE_VER }}
           cache: 'pnpm'
-
       - name: Enable corepack
         run: corepack enable
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Build project
         run: pnpm bld
+      - name: Deploy project
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: daily
+          publish_dir: out

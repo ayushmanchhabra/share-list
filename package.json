@@ -9,11 +9,11 @@
   },
   "packageManager": "pnpm@8.6.12",
   "scripts": {
-    "fmt": "eslint --config=cfg/eslint.config.cjs --fix src/**/*.{ts,tsx}",
-    "lnt": "eslint --config=cfg/eslint.config.cjs src/**/*.{ts,tsx}",
+    "fmt": "eslint --config=.github/eslint.config.cjs --fix src/**/*.{ts,tsx}",
+    "lnt": "eslint --config=.github/eslint.config.cjs src/**/*.{ts,tsx}",
     "dev": "vite",
     "bld": "vite build",
-    "e2e": "exit 0"
+    "e2e": "nightwatch --config=.github/nightwatch.conf.cjs test"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

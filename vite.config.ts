@@ -1,9 +1,14 @@
 import { defineConfig } from "vite";
+import nightwatch from 'vite-plugin-nightwatch';
 import tsconfigPaths from "vite-tsconfig-paths";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react"; 
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [
+    nightwatch(),
+    react(),
+    tsconfigPaths(),
+  ],
   base: "/share-list/",
   build: {
     sourcemap: true,

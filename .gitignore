@@ -1,4 +1,6 @@
 node_modules
 
+logs
 out
 src/index.js
+tests_output

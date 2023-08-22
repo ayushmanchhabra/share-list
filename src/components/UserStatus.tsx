@@ -9,7 +9,7 @@ import {
 import style from "./UserStatus.module.scss";
 
 interface UserStatusProps {
-    status: "log-in" | "loading" | "log-out";
+    status?: "log-in" | "loading" | "log-out";
 }
 
 export function UserStatus ({

@@ -27,9 +27,3 @@ jobs:
         run: pnpm i --frozen-lockfile
       - name: Build project
         run: pnpm bld
-      - name: Deploy project
-        uses: peaceiris/actions-gh-pages@v3.9.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: daily
-          publish_dir: out

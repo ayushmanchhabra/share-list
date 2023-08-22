@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-node@v3.8.1
         with:
           node-version: ${{ env.NODE_VER }}
+          cache: 'pnpm'
       - name: Enable corepack
         run: corepack enable
       - name: Install dependencies

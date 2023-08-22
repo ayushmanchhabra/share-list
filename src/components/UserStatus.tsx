@@ -6,7 +6,7 @@ import {
     Logout as LogoutIcon,
 } from '@mui/icons-material';
 
-import style from "./UserStatus.module.scss";
+import style from "./UserStatus.module.css";
 
 interface UserStatusProps {
     status?: "log-in" | "loading" | "log-out";

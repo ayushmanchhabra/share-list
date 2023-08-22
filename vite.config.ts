@@ -8,9 +8,5 @@ export default defineConfig({
     nightwatch(),
     react(),
     tsconfigPaths(),
-  ],
-  base: "/share-list/",
-  build: {
-    sourcemap: true
-  },
+  ]
 });

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { UserStatus } from "components";
 import { deserialise, serialise } from "providers";
-import { PlaylistSchema, SongSchema } from "schema";
+import { PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
 
 export function App() {
   const [playlist, setPlaylist] = useState<PlaylistSchema>({
@@ -38,6 +39,7 @@ export function App() {
         }
       }}
     >
+      <UserStatus status={UserStatusSchema.LOG_IN} />
       <input
         autoFocus={playlist.focus}
         className={"title"}

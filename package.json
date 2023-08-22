@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "v18.17.1",
+    "node": ">= v18.17.1",
     "pnpm": "8.6.12"
   },
   "packageManager": "pnpm@8.6.12",
@@ -12,7 +12,7 @@
     "fmt": "prettier --write .",
     "lnt": "eslint --config=cfg/eslint.config.cjs ./**/*.tsx",
     "dev": "vite",
-    "bld": "vite build -d out",
+    "bld": "vite build",
     "e2e": "nightwatch test/*.spec.tsx"
   },
   "dependencies": {

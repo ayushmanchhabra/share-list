@@ -11,7 +11,6 @@ export default defineConfig({
   ],
   base: "/share-list/",
   build: {
-    sourcemap: true,
-    outDir: "out",
+    sourcemap: true
   },
 });

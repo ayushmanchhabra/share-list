@@ -30,7 +30,7 @@ dependencies:
 devDependencies:
   '@nightwatch/react':
     specifier: 3.1.0
-    version: 3.1.0(@vitejs/plugin-react@4.0.3)(nightwatch@3.1.3)(vite@4.4.4)(vue@3.3.4)
+    version: 3.1.0(@vitejs/plugin-react@4.0.4)(nightwatch@3.1.3)(vite@4.4.4)(vue@3.3.4)
   '@swc/core':
     specifier: 1.3.78
     version: 1.3.78
@@ -50,8 +50,8 @@ devDependencies:
     specifier: 6.4.1
     version: 6.4.1(eslint@8.45.0)(typescript@5.1.6)
   '@vitejs/plugin-react':
-    specifier: 4.0.3
-    version: 4.0.3(vite@4.4.4)
+    specifier: 4.0.4
+    version: 4.0.4(vite@4.4.4)
   '@vitejs/plugin-react-swc':
     specifier: 3.3.2
     version: 3.3.2(vite@4.4.4)
@@ -974,7 +974,7 @@ packages:
       archiver: 5.3.2
     dev: true
 
-  /@nightwatch/react@3.1.0(@vitejs/plugin-react@4.0.3)(nightwatch@3.1.3)(vite@4.4.4)(vue@3.3.4):
+  /@nightwatch/react@3.1.0(@vitejs/plugin-react@4.0.4)(nightwatch@3.1.3)(vite@4.4.4)(vue@3.3.4):
     resolution: {integrity: sha512-RWuitXihqqCXxu6oRDNQLf/sFGNe4hytovt8VoEuk6KtsV1eME2+QfSNWG9PQ8KqU0V4ufb2qcMvBWubbo+Q0A==}
     peerDependencies:
       '@vitejs/plugin-react': ^3.0.1
@@ -982,7 +982,7 @@ packages:
       vite: ^4.0.4
     dependencies:
       '@nightwatch/esbuild-utils': 0.2.1
-      '@vitejs/plugin-react': 4.0.3(vite@4.4.4)
+      '@vitejs/plugin-react': 4.0.4(vite@4.4.4)
       assertion-error: 2.0.0
       get-port: 5.1.1
       jsdom: 20.0.3
@@ -1337,8 +1337,8 @@ packages:
       - '@swc/helpers'
     dev: true
 
-  /@vitejs/plugin-react@4.0.3(vite@4.4.4):
-    resolution: {integrity: sha512-pwXDog5nwwvSIzwrvYYmA2Ljcd/ZNlcsSG2Q9CNDBwnsd55UGAyr2doXtB5j+2uymRCnCfExlznzzSFbBRcoCg==}
+  /@vitejs/plugin-react@4.0.4(vite@4.4.4):
+    resolution: {integrity: sha512-7wU921ABnNYkETiMaZy7XqpueMnpu5VxvVps13MjmCo+utBdD79sZzrApHawHtVX66cCJQQTXFcjH0y9dSUK8g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0

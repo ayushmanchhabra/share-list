@@ -42,7 +42,7 @@
     "sass": "1.64.0",
     "ts-node": "10.9.1",
     "typescript": "5.1.6",
-    "vite": "4.4.4",
+    "vite": "4.4.9",
     "vite-plugin-nightwatch": "0.4.5",
     "vite-tsconfig-paths": "4.2.0"
   }

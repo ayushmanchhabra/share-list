@@ -3,7 +3,7 @@ import React from "react";
 import { UserDialog } from "../src/components";
 
 export default {
-  title: "UserStatus",
+  title: "UserDialog",
   component: UserDialog,
 };
 

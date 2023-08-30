@@ -7,7 +7,7 @@ export default {
   component: UserStatus,
 };
 
-export const UserStatusStory = Object.assign(() => <UserStatus status={"log-in"} />, {
+export const UserStatusStory = Object.assign(() => <UserStatus handleOpen={() => {}} status={"log-in"} />, {
   test: async (browser, { component, result }) => {
     await expect(component).to.be.visible;
   },

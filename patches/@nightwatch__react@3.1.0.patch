@@ -1,0 +1,13 @@
+diff --git a/package.json b/package.json
+index a208e10211694051a0c060d79f3e079ad64a8dd1..fc041d627ed4377863333d816dc1dad9cac485f9 100644
+--- a/package.json
++++ b/package.json
+@@ -23,7 +23,7 @@
+   "license": "MIT",
+   "peerDependencies": {
+     "vite": "^4.0.4",
+-    "@vitejs/plugin-react": "^3.0.1",
++    "@vitejs/plugin-react": "^4.0.4",
+     "nightwatch": "^3.1.0"
+   },
+   "dependencies": {

@@ -16,6 +16,7 @@
     "e2e": "nightwatch --config=.github/nightwatch.conf.cjs test"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "1.2.1",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/icons-material": "5.14.7",
@@ -45,5 +46,10 @@
     "vite": "4.4.9",
     "vite-plugin-nightwatch": "0.4.5",
     "vite-tsconfig-paths": "4.2.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@nightwatch/react@3.1.0": "patches/@nightwatch__react@3.1.0.patch"
+    }
   }
 }

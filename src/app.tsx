@@ -12,6 +12,7 @@ export function App() {
     focus: true,
   } as PlaylistSchema);
   const [keyState, setKeyState] = useState<string>("");
+  const [userDialogStatus, setUserDialogStatus] = useState<boolean>(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -22,6 +23,14 @@ export function App() {
       setPlaylist(appState);
     }
   }, [id]);
+
+  const handleUserDialogOpen = (_: any) => {
+    setUserDialogStatus(true);
+  };
+
+  const handleUserDialogClose = (_: any) => {
+    setUserDialogStatus(false);
+  };
 
   return (
     <div
@@ -39,7 +48,7 @@ export function App() {
         }
       }}
     >
-      <UserStatus status={UserStatusSchema.LOG_IN} />
+      <UserStatus handleOpen={handleUserDialogOpen} status={UserStatusSchema.LOG_IN} />
       <input
         autoFocus={playlist.focus}
         className={"title"}
@@ -100,8 +109,8 @@ export function App() {
         );
       })}
     <UserDialog
-      onClose={() => {}}
-      open={true}
+      onClose={handleUserDialogClose}
+      open={userDialogStatus}
     />
     </div>
   );

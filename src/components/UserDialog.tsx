@@ -1,5 +1,5 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
-import { Apple as AppleIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton } from "@mui/material";
+import { Apple as AppleIcon, Close as CloseIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
 
 // import { SpotifyIcon } from "assets";
 
@@ -17,7 +17,12 @@ export function UserDialog({
             onClose={onClose}
             open={open}
         >
-            <DialogTitle>Login</DialogTitle>
+            <DialogTitle>
+                Login
+                <IconButton>
+                    <CloseIcon onClick={onClose}/>
+                </IconButton>
+            </DialogTitle>
             <DialogContent>
                 <DialogContentText>Log into Share List via:</DialogContentText>
             </DialogContent>

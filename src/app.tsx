@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { UserStatus } from "components";
+import { UserDialog, UserStatus } from "components";
 import { deserialise, serialise } from "providers";
 import { PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
 
@@ -99,6 +99,10 @@ export function App() {
           />
         );
       })}
+    <UserDialog
+      onClose={() => {}}
+      open={true}
+    />
     </div>
   );
 }

@@ -17,8 +17,8 @@ export function UserDialog({
         >
             <DialogTitle>
                 Login
-                <IconButton>
-                    <CloseIcon onClick={onClose}/>
+                <IconButton onClick={onClose}>
+                    <CloseIcon/>
                 </IconButton>
             </DialogTitle>
             <DialogContent>

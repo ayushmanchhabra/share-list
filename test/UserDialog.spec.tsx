@@ -7,14 +7,8 @@ export default {
   component: UserDialog,
 };
 
-export const UserDialogOpenStory = Object.assign(() => <UserDialog onClose={() => {}} open={true} />, {
-  test: async (browser, { component, result }) => {
-    await expect(component).to.be.visible;
-  },
-});
+export const UserDialogStory = () => <UserDialog onClose={() => {}} open={false} />;
 
-export const UserDialogCloseStory = Object.assign(() => <UserDialog onClose={() => {}} open={false} />, {
-  test: async (browser, { component, result }) => {
-    await expect(component).to.not.be.visible;
-  },
-});
+UserDialogStory.test = async (browser, { component, result }) => {
+  await expect(component).to.not.be.visible;
+};

@@ -45,6 +45,9 @@ devDependencies:
   '@tsconfig/vite-react':
     specifier: 2.0.0
     version: 2.0.0
+  '@types/nightwatch':
+    specifier: 2.3.25
+    version: 2.3.25
   '@types/node':
     specifier: 20.5.7
     version: 20.5.7

@@ -15,6 +15,7 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
+      "assets": ["assets/index.ts"],
       "components": ["components/index.ts"],
       "providers": ["providers/index.ts"],
       "schema": ["schema/index.ts"]

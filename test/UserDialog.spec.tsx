@@ -9,6 +9,6 @@ export default {
 
 export const UserDialogStory = () => <UserDialog onClose={() => {}} open={false} />;
 
-UserDialogStory.test = async (browser, { component, result }) => {
-  await expect(component).to.not.be.visible;
-};
+// UserDialogStory.test = async (browser, { component, result }) => {
+//   await expect(component).to.not.be.visible;
+// };

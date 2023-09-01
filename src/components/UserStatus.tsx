@@ -9,16 +9,18 @@ import {
 import style from "./UserStatus.module.css";
 
 interface UserStatusProps {
+    handleOpen: (event: any) => void;
     status?: "log-in" | "loading" | "log-out";
 }
 
 export function UserStatus ({
+    handleOpen,
     status,
 }: UserStatusProps) {
     
     if (status === "log-in") {
         return (
-            <IconButton className={style.UserStatus}>
+            <IconButton className={style.UserStatus} onClick={handleOpen}>
                 <LoginIcon />
             </IconButton>
         );
@@ -26,7 +28,7 @@ export function UserStatus ({
 
     else if (status === "loading") {
         return (
-            <IconButton className={style.UserStatus}>
+            <IconButton className={style.UserStatus} onClick={handleOpen}>
                 <LoadingIcon />
             </IconButton>
         );
@@ -34,7 +36,7 @@ export function UserStatus ({
 
     else if (status === "log-out") {
         return (
-            <IconButton className={style.UserStatus}>
+            <IconButton className={style.UserStatus} onClick={handleOpen}>
                 <LogoutIcon />
             </IconButton>
         );

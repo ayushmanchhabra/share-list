@@ -27,20 +27,26 @@ export function UserDialog({
                 <DialogContentText>Log into Share List via:</DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button>
-                    <AppleIcon />
-                    Apple Music
-                </Button>
-                <Button>
-                    <SvgIcon>
-                        <SpotifyIcon />
-                    </SvgIcon>
-                    Spotify
-                </Button>
-                <Button>
-                    <YouTubeIcon />
-                    YouTube Music
-                </Button>
+                {import.meta.env.VITE_ENABLE_APPLE_MUSIC === "1" && (
+                    <Button>
+                        <AppleIcon />
+                        Apple Music
+                    </Button>
+                )}
+                {import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "1" && (
+                    <Button>
+                        <SvgIcon>
+                            <SpotifyIcon />
+                        </SvgIcon>
+                        Spotify Music
+                    </Button>
+                )}
+                {import.meta.env.VITE_ENABLE_YOUTUBE_MUSIC === "1" && (
+                    <Button>
+                        <YouTubeIcon />
+                        YouTube Music
+                    </Button>
+                )}
             </DialogActions>
         </Dialog>
     );

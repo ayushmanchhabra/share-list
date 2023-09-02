@@ -21,5 +21,5 @@ module.exports = {
         // https://github.com/nightwatchjs/nightwatch/issues/792
         "no-unused-vars": "off",
         "no-undef": "off",
-    }
+    },
 }

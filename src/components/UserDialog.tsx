@@ -1,5 +1,7 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, SvgIcon } from "@mui/material";
 import { Apple as AppleIcon, Close as CloseIcon, YouTube as YouTubeIcon } from '@mui/icons-material';
+
+import { SpotifyIcon } from "assets";
 
 interface UserDialogProps {
     open: boolean;
@@ -18,7 +20,7 @@ export function UserDialog({
             <DialogTitle>
                 Login
                 <IconButton onClick={onClose}>
-                    <CloseIcon/>
+                    <CloseIcon />
                 </IconButton>
             </DialogTitle>
             <DialogContent>
@@ -30,6 +32,9 @@ export function UserDialog({
                     Apple Music
                 </Button>
                 <Button>
+                    <SvgIcon>
+                        <SpotifyIcon />
+                    </SvgIcon>
                     Spotify
                 </Button>
                 <Button>

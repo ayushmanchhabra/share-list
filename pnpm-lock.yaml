@@ -25,6 +25,9 @@ dependencies:
   '@mui/material':
     specifier: 5.14.7
     version: 5.14.7(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
+  '@spotify/web-api-ts-sdk':
+    specifier: 1.1.0
+    version: 1.1.0
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -1120,6 +1123,10 @@ packages:
   /@sinonjs/text-encoding@0.7.2:
     resolution: {integrity: sha512-sXXKG+uL9IrKqViTtao2Ws6dy0znu9sOaP1di/jKGW1M6VssO8vlpXCQcpZ+jisQ1tTFAC5Jo/EOzFbggBagFQ==}
     dev: true
+
+  /@spotify/web-api-ts-sdk@1.1.0:
+    resolution: {integrity: sha512-SDMduy1YOc86boPQQbjiTJVHhVDUOFTBKMovmBizEbURGVae1Cvswyd/gzSQQwE1FUDXTD4Y8nhn9XHDGvRENA==}
+    dev: false
 
   /@svgr/babel-plugin-add-jsx-attribute@7.0.0(@babel/core@7.22.11):
     resolution: {integrity: sha512-khWbXesWIP9v8HuKCl2NU2HNAyqpSQ/vkIl36Nbn4HIwEYSRWL0H7Gs6idJdha2DkpFDWlsqMELvoCE8lfFY6Q==}

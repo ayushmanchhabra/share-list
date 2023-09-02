@@ -6,10 +6,12 @@ import { SpotifyIcon } from "assets";
 interface UserDialogProps {
     open: boolean;
     onClose: (event: any) => void;
+    onSpotifyClick: (event: any) => void;
 }
 
 export function UserDialog({
     onClose,
+    onSpotifyClick,
     open,
 }: UserDialogProps) {
     return (
@@ -34,7 +36,7 @@ export function UserDialog({
                     </Button>
                 )}
                 {import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "1" && (
-                    <Button>
+                    <Button onClick={onSpotifyClick}>
                         <SvgIcon>
                             <SpotifyIcon />
                         </SvgIcon>

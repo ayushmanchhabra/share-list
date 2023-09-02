@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { UserDialog, UserStatus } from "components";
-import { deserialise, serialise } from "providers";
+import { deserialise, serialise, spotifyOauth } from "providers";
 import { PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
 
 export function App() {
@@ -31,6 +31,10 @@ export function App() {
   const handleUserDialogClose = (_: any) => {
     setUserDialogStatus(false);
   };
+
+  const handleSpotifyClick = async (_: any) => {
+    await spotifyOauth();
+  }; 
 
   return (
     <div
@@ -111,6 +115,7 @@ export function App() {
     <UserDialog
       onClose={handleUserDialogClose}
       open={userDialogStatus}
+      onSpotifyClick={handleSpotifyClick}
     />
     </div>
   );

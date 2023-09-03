@@ -26,8 +26,8 @@ dependencies:
     specifier: 5.14.7
     version: 5.14.7(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
   '@spotify/web-api-ts-sdk':
-    specifier: 1.1.0
-    version: 1.1.0
+    specifier: 1.1.1
+    version: 1.1.1
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -1124,8 +1124,8 @@ packages:
     resolution: {integrity: sha512-sXXKG+uL9IrKqViTtao2Ws6dy0znu9sOaP1di/jKGW1M6VssO8vlpXCQcpZ+jisQ1tTFAC5Jo/EOzFbggBagFQ==}
     dev: true
 
-  /@spotify/web-api-ts-sdk@1.1.0:
-    resolution: {integrity: sha512-SDMduy1YOc86boPQQbjiTJVHhVDUOFTBKMovmBizEbURGVae1Cvswyd/gzSQQwE1FUDXTD4Y8nhn9XHDGvRENA==}
+  /@spotify/web-api-ts-sdk@1.1.1:
+    resolution: {integrity: sha512-HKCpfuc7VNMGG5LnkgiSJzC2NlvvM5q+XyG3nm6vQgxAYSrTfhdJtyF/vJLtJCpjZa5I0Q/FdoeDOxqTP8mcaA==}
     dev: false
 
   /@svgr/babel-plugin-add-jsx-attribute@7.0.0(@babel/core@7.22.11):

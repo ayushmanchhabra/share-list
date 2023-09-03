@@ -3,17 +3,17 @@ import { Apple as AppleIcon, Close as CloseIcon, YouTube as YouTubeIcon } from '
 
 import { SpotifyIcon } from "assets";
 
-interface UserDialogProps {
+interface LoginDialogProps {
     open: boolean;
     onClose: (event: any) => void;
     onSpotifyClick: (event: any) => void;
 }
 
-export function UserDialog({
+export function LoginDialog({
     onClose,
     onSpotifyClick,
     open,
-}: UserDialogProps) {
+}: LoginDialogProps) {
     return (
         <Dialog
             onClose={onClose}

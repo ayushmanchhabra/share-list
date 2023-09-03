@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { UserDialog, UserStatus } from "components";
-import { deserialise, serialise, spotifyOauth } from "providers";
+import { LoginDialog, LogoutDialog, UserStatus } from "components";
+import { deserialise, serialise } from "providers";
 import { PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
 
 export function App() {
@@ -12,7 +12,9 @@ export function App() {
     focus: true,
   } as PlaylistSchema);
   const [keyState, setKeyState] = useState<string>("");
-  const [userDialogStatus, setUserDialogStatus] = useState<boolean>(false);
+  const [isLoginDialogOpen, setIsLoginDialogOpen] = useState<boolean>(false);
+  const [isLogoutDialogOpen, setIsLogoutDialogOpen] = useState<boolean>(false);
+  const [userStatus, setUserStatus] = useState<UserStatusSchema>(UserStatusSchema.LOG_IN);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -24,17 +26,31 @@ export function App() {
     }
   }, [id]);
 
-  const handleUserDialogOpen = (_: any) => {
-    setUserDialogStatus(true);
+  const handleLoginDialogOpen = (_: any) => {
+    setIsLoginDialogOpen(true);
   };
 
-  const handleUserDialogClose = (_: any) => {
-    setUserDialogStatus(false);
+  const handleLoginDialogClose = () => {
+    setIsLoginDialogOpen(false);
   };
 
-  const handleSpotifyClick = async (_: any) => {
-    await spotifyOauth();
-  }; 
+  const handleLogoutDialogOpen = (_: any) => {
+    setIsLogoutDialogOpen(true);
+  };
+
+  const handleLogoutDialogClose = () => {
+    setIsLogoutDialogOpen(false);
+  };
+
+  const handleSpotifyClick = (_: any) => {
+    setUserStatus(UserStatusSchema.LOG_OUT);
+    setIsLoginDialogOpen(false);
+  };
+
+  const handleLogout = () => {
+    setUserStatus(UserStatusSchema.LOG_IN);
+    setIsLogoutDialogOpen(false);
+  };
 
   return (
     <div
@@ -52,7 +68,10 @@ export function App() {
         }
       }}
     >
-      <UserStatus handleOpen={handleUserDialogOpen} status={UserStatusSchema.LOG_IN} />
+      <UserStatus
+        handleOpen={userStatus === UserStatusSchema.LOG_OUT ? handleLogoutDialogOpen : handleLoginDialogOpen}
+        status={userStatus}
+      />
       <input
         autoFocus={playlist.focus}
         className={"title"}
@@ -112,10 +131,15 @@ export function App() {
           />
         );
       })}
-    <UserDialog
-      onClose={handleUserDialogClose}
-      open={userDialogStatus}
+    <LoginDialog
+      onClose={handleLoginDialogClose}
+      open={isLoginDialogOpen}
       onSpotifyClick={handleSpotifyClick}
+    />
+    <LogoutDialog
+      onClose={handleLogoutDialogClose}
+      open={isLogoutDialogOpen}
+      onLogout={handleLogout}
     />
     </div>
   );

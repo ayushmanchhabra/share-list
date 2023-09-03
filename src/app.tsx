@@ -42,7 +42,7 @@ export function App() {
     setIsLogoutDialogOpen(false);
   };
 
-  const handleSpotifyClick = (_: any) => {
+  const handleSpotifyLogin = (_: any) => {
     setUserStatus(UserStatusSchema.LOG_OUT);
     setIsLoginDialogOpen(false);
   };
@@ -134,7 +134,7 @@ export function App() {
     <LoginDialog
       onClose={handleLoginDialogClose}
       open={isLoginDialogOpen}
-      onSpotifyClick={handleSpotifyClick}
+      onSpotifyLogin={handleSpotifyLogin}
     />
     <LogoutDialog
       onClose={handleLogoutDialogClose}

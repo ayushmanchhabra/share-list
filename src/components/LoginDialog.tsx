@@ -6,12 +6,12 @@ import { SpotifyIcon } from "assets";
 interface LoginDialogProps {
     open: boolean;
     onClose: (event: any) => void;
-    onSpotifyClick: (event: any) => void;
+    onSpotifyLogin: (event: any) => void;
 }
 
 export function LoginDialog({
     onClose,
-    onSpotifyClick,
+    onSpotifyLogin,
     open,
 }: LoginDialogProps) {
     return (

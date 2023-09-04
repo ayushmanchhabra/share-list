@@ -10,6 +10,10 @@ export function useSpotify(clientId: string, redirectUrl: string, scopes: string
 
     function authenticate() {
 
+        if (import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "0") {
+            return null;
+        }
+
         let sdk: SpotifyApi | null = null;
 
         if (accessToken !== null) {

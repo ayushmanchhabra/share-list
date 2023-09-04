@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Scopes } from "@spotify/web-api-ts-sdk";
 
-import { LoginDialog, LogoutDialog, UserStatus } from "components";
+import { LoginDialog, LogoutDialog, Notification, UserStatus } from "components";
 import { deserialise, serialise } from "providers";
-import { PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
+import { NotificationSchema, PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
 import { useSpotify } from "providers";
 
 export function App() {
@@ -18,6 +18,9 @@ export function App() {
   const [isLogoutDialogOpen, setIsLogoutDialogOpen] = useState<boolean>(false);
   const [userStatus, setUserStatus] = useState<UserStatusSchema>(UserStatusSchema.LOG_IN);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isNotificationOpen, setisNotificationOpen] = useState<boolean>(false);
+  const [notificationMessage, setNotificationMessage] = useState<string>("");
+  const [notificationType, setNotificationType] = useState<NotificationSchema>(NotificationSchema.INFO);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -70,8 +73,15 @@ export function App() {
       .then(() => {
         setUserStatus(UserStatusSchema.LOG_OUT);
         setIsLoginDialogOpen(false);
+        setisNotificationOpen(true);
+        setNotificationMessage("Successfully logged in via Spotify");
+        setNotificationType(NotificationSchema.SUCCESS);
       })
-      .catch((error) => console.error(error))
+      .catch((error) => {
+        setisNotificationOpen(true);
+        setNotificationMessage(error.message);
+        setNotificationType(NotificationSchema.ERROR);
+      })
   };
 
   const handleLogout = () => {
@@ -81,6 +91,15 @@ export function App() {
     }
     setUserStatus(UserStatusSchema.LOG_IN);
     setIsLogoutDialogOpen(false);
+    setisNotificationOpen(true);
+    setNotificationMessage("Successfully logged out via Spotify");
+    setNotificationType(NotificationSchema.INFO);
+  };
+
+  const handleNotificationClose = () => {
+    setisNotificationOpen(false);
+    setNotificationMessage("");
+    setNotificationType(NotificationSchema.INFO);
   };
 
   return (
@@ -171,6 +190,12 @@ export function App() {
         onClose={handleLogoutDialogClose}
         open={isLogoutDialogOpen}
         onLogout={handleLogout}
+      />
+      <Notification
+        onClose={handleNotificationClose}
+        open={isNotificationOpen}
+        message={notificationMessage}
+        type={notificationType}
       />
     </div>
   );

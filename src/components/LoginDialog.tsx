@@ -36,7 +36,7 @@ export function LoginDialog({
                     </Button>
                 )}
                 {import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "1" && (
-                    <Button onClick={onSpotifyClick}>
+                    <Button onClick={onSpotifyLogin}>
                         <SvgIcon>
                             <SpotifyIcon />
                         </SvgIcon>

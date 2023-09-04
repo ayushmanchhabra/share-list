@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Scopes } from "@spotify/web-api-ts-sdk";
 
 import { LoginDialog, LogoutDialog, UserStatus } from "components";
 import { deserialise, serialise } from "providers";
 import { PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
+import { useSpotify } from "providers";
 
 export function App() {
   const [playlist, setPlaylist] = useState<PlaylistSchema>({
@@ -15,9 +17,30 @@ export function App() {
   const [isLoginDialogOpen, setIsLoginDialogOpen] = useState<boolean>(false);
   const [isLogoutDialogOpen, setIsLogoutDialogOpen] = useState<boolean>(false);
   const [userStatus, setUserStatus] = useState<UserStatusSchema>(UserStatusSchema.LOG_IN);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
+  const {
+    api,
+    authenticate,
+  } = useSpotify(
+    import.meta.env.VITE_SPOTIFY_CLIENT_ID,
+    import.meta.env.VITE_SPOTIFY_REDIRECT_URI,
+    Scopes.userDetails,
+  );
+
+  useEffect(() => {
+    if (api !== null) {
+      setIsLoggedIn(true);
+    }
+  }, [api]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setUserStatus(UserStatusSchema.LOG_OUT);
+    }
+  }, [isLoggedIn])
 
   useEffect(() => {
     if (id !== undefined) {
@@ -43,11 +66,19 @@ export function App() {
   };
 
   const handleSpotifyLogin = (_: any) => {
-    setUserStatus(UserStatusSchema.LOG_OUT);
-    setIsLoginDialogOpen(false);
+    return authenticate()
+      .then(() => {
+        setUserStatus(UserStatusSchema.LOG_OUT);
+        setIsLoginDialogOpen(false);
+      })
+      .catch((error) => console.error(error))
   };
 
   const handleLogout = () => {
+    if (api !== null) {
+      api.logOut();
+      localStorage.removeItem("ACCESS_TOKEN");
+    }
     setUserStatus(UserStatusSchema.LOG_IN);
     setIsLogoutDialogOpen(false);
   };
@@ -131,16 +162,16 @@ export function App() {
           />
         );
       })}
-    <LoginDialog
-      onClose={handleLoginDialogClose}
-      open={isLoginDialogOpen}
-      onSpotifyLogin={handleSpotifyLogin}
-    />
-    <LogoutDialog
-      onClose={handleLogoutDialogClose}
-      open={isLogoutDialogOpen}
-      onLogout={handleLogout}
-    />
+      <LoginDialog
+        onClose={handleLoginDialogClose}
+        open={isLoginDialogOpen}
+        onSpotifyLogin={handleSpotifyLogin}
+      />
+      <LogoutDialog
+        onClose={handleLogoutDialogClose}
+        open={isLogoutDialogOpen}
+        onLogout={handleLogout}
+      />
     </div>
   );
 }

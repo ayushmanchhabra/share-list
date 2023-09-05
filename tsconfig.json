@@ -17,8 +17,7 @@
     "paths": {
       "assets": ["assets/index.ts"],
       "components": ["components/index.ts"],
-      "providers": ["providers/index.ts"],
-      "schema": ["schema/index.ts"]
+      "providers": ["providers/index.ts"]
     },
     /* Linting */
     "strict": true,

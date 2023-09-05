@@ -12,6 +12,6 @@ if (root !== null) {
         <Route path="/" element={<App />} />
         <Route path="/:id" element={<App />} />
       </Routes>
-    </Router>
+    </Router>,
   );
 }

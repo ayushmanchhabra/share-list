@@ -1,0 +1,6 @@
+dist
+logs
+node_modules
+patches
+tests_output
+pnpm-lock.yaml

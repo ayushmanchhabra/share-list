@@ -2,7 +2,7 @@ name: gha
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 concurrency:
   group: ${{ github.ref }}

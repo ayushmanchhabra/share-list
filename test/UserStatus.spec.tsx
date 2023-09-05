@@ -1,7 +1,7 @@
 import React from "react";
 
 import { UserStatus } from "../src/components";
-import { UserStatusSchema } from "../src/schema";
+import { UserStatusSchema } from "../src/providers";
 
 export default {
   title: "UserStatus",

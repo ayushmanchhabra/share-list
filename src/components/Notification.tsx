@@ -1,6 +1,6 @@
 import { Alert, Snackbar } from "@mui/material";
 
-import { NotificationSchema } from "schema";
+import { NotificationSchema } from "providers";
 
 interface NotificationProps {
     onClose: () => void;

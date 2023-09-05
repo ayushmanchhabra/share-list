@@ -3,8 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Scopes } from "@spotify/web-api-ts-sdk";
 
 import { LoginDialog, LogoutDialog, Notification, UserStatus } from "components";
-import { deserialise, serialise } from "providers";
-import { NotificationSchema, PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
+import { NotificationSchema, PlaylistSchema, SongSchema, UserStatusSchema, deserialise, serialise } from "providers";
 import { useSpotify } from "providers";
 
 export function App() {

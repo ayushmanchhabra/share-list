@@ -4,12 +4,5 @@ export { deserialise } from "./deserialise";
 export { useLocalStorage } from "./localStorage";
 export { serialise } from "./serialise";
 export { useSpotify } from "./oauth";
-export type {
-    ItemSchema,
-    PlaylistSchema,
-    SongSchema,
-} from "./schema";
-export {
-    NotificationSchema,
-    UserStatusSchema,
-} from "./schema";
+export type { ItemSchema, PlaylistSchema, SongSchema } from "./schema";
+export { NotificationSchema, UserStatusSchema } from "./schema";

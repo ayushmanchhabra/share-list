@@ -1,28 +1,28 @@
 export type ItemSchema = {
-    focus: boolean;
+  focus: boolean;
 };
 
 export enum NotificationSchema {
-    ERROR = "error",
-    WARN = "warning",
-    INFO = "info",
-    SUCCESS = "success"
+  ERROR = "error",
+  WARN = "warning",
+  INFO = "info",
+  SUCCESS = "success",
 }
 
 export type PlaylistSchema = {
-    title: string;
-    songs: SongSchema[];
-    focus: boolean;
+  title: string;
+  songs: SongSchema[];
+  focus: boolean;
 };
 
 export type SongSchema = {
-    title: string;
-    artist: string;
-    focus: boolean;
+  title: string;
+  artist: string;
+  focus: boolean;
 };
 
 export enum UserStatusSchema {
-    LOG_IN = 'log-in',
-    LOG_OUT = 'log-out',
-    LOADING = 'loading',
+  LOG_IN = "log-in",
+  LOG_OUT = "log-out",
+  LOADING = "loading",
 }

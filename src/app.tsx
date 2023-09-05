@@ -2,8 +2,20 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Scopes } from "@spotify/web-api-ts-sdk";
 
-import { LoginDialog, LogoutDialog, Notification, UserStatus } from "components";
-import { NotificationSchema, PlaylistSchema, SongSchema, UserStatusSchema, deserialise, serialise } from "providers";
+import {
+  LoginDialog,
+  LogoutDialog,
+  Notification,
+  UserStatus,
+} from "components";
+import {
+  NotificationSchema,
+  PlaylistSchema,
+  SongSchema,
+  UserStatusSchema,
+  deserialise,
+  serialise,
+} from "providers";
 import { useSpotify } from "providers";
 
 export function App() {
@@ -15,18 +27,19 @@ export function App() {
   const [keyState, setKeyState] = useState<string>("");
   const [isLoginDialogOpen, setIsLoginDialogOpen] = useState<boolean>(false);
   const [isLogoutDialogOpen, setIsLogoutDialogOpen] = useState<boolean>(false);
-  const [userStatus, setUserStatus] = useState<UserStatusSchema>(UserStatusSchema.LOG_IN);
+  const [userStatus, setUserStatus] = useState<UserStatusSchema>(
+    UserStatusSchema.LOG_IN,
+  );
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [isNotificationOpen, setisNotificationOpen] = useState<boolean>(false);
   const [notificationMessage, setNotificationMessage] = useState<string>("");
-  const [notificationType, setNotificationType] = useState<NotificationSchema>(NotificationSchema.INFO);
+  const [notificationType, setNotificationType] = useState<NotificationSchema>(
+    NotificationSchema.INFO,
+  );
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const {
-    api,
-    authenticate,
-  } = useSpotify(
+  const { api, authenticate } = useSpotify(
     import.meta.env.VITE_SPOTIFY_CLIENT_ID,
     import.meta.env.VITE_SPOTIFY_REDIRECT_URI,
     Scopes.userDetails,
@@ -42,7 +55,7 @@ export function App() {
     if (isLoggedIn) {
       setUserStatus(UserStatusSchema.LOG_OUT);
     }
-  }, [isLoggedIn])
+  }, [isLoggedIn]);
 
   useEffect(() => {
     if (id !== undefined) {
@@ -80,7 +93,7 @@ export function App() {
         setisNotificationOpen(true);
         setNotificationMessage(error.message);
         setNotificationType(NotificationSchema.ERROR);
-      })
+      });
   };
 
   const handleLogout = () => {
@@ -118,7 +131,11 @@ export function App() {
       }}
     >
       <UserStatus
-        handleOpen={userStatus === UserStatusSchema.LOG_OUT ? handleLogoutDialogOpen : handleLoginDialogOpen}
+        handleOpen={
+          userStatus === UserStatusSchema.LOG_OUT
+            ? handleLogoutDialogOpen
+            : handleLoginDialogOpen
+        }
         status={userStatus}
       />
       <input

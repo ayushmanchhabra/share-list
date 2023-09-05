@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Scopes } from "@spotify/web-api-ts-sdk";
 
-import { UserDialog, UserStatus } from "components";
+import { LoginDialog, LogoutDialog, Notification, UserStatus } from "components";
 import { deserialise, serialise } from "providers";
-import { PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
+import { NotificationSchema, PlaylistSchema, SongSchema, UserStatusSchema } from "schema";
+import { useSpotify } from "providers";
 
 export function App() {
   const [playlist, setPlaylist] = useState<PlaylistSchema>({
@@ -12,10 +14,36 @@ export function App() {
     focus: true,
   } as PlaylistSchema);
   const [keyState, setKeyState] = useState<string>("");
-  const [userDialogStatus, setUserDialogStatus] = useState<boolean>(false);
+  const [isLoginDialogOpen, setIsLoginDialogOpen] = useState<boolean>(false);
+  const [isLogoutDialogOpen, setIsLogoutDialogOpen] = useState<boolean>(false);
+  const [userStatus, setUserStatus] = useState<UserStatusSchema>(UserStatusSchema.LOG_IN);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isNotificationOpen, setisNotificationOpen] = useState<boolean>(false);
+  const [notificationMessage, setNotificationMessage] = useState<string>("");
+  const [notificationType, setNotificationType] = useState<NotificationSchema>(NotificationSchema.INFO);
 
   const { id } = useParams();
   const navigate = useNavigate();
+  const {
+    api,
+    authenticate,
+  } = useSpotify(
+    import.meta.env.VITE_SPOTIFY_CLIENT_ID,
+    import.meta.env.VITE_SPOTIFY_REDIRECT_URI,
+    Scopes.userDetails,
+  );
+
+  useEffect(() => {
+    if (api !== null) {
+      setIsLoggedIn(true);
+    }
+  }, [api]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setUserStatus(UserStatusSchema.LOG_OUT);
+    }
+  }, [isLoggedIn])
 
   useEffect(() => {
     if (id !== undefined) {
@@ -24,12 +52,54 @@ export function App() {
     }
   }, [id]);
 
-  const handleUserDialogOpen = (_: any) => {
-    setUserDialogStatus(true);
+  const handleLoginDialogOpen = (_: any) => {
+    setIsLoginDialogOpen(true);
   };
 
-  const handleUserDialogClose = (_: any) => {
-    setUserDialogStatus(false);
+  const handleLoginDialogClose = () => {
+    setIsLoginDialogOpen(false);
+  };
+
+  const handleLogoutDialogOpen = (_: any) => {
+    setIsLogoutDialogOpen(true);
+  };
+
+  const handleLogoutDialogClose = () => {
+    setIsLogoutDialogOpen(false);
+  };
+
+  const handleSpotifyLogin = (_: any) => {
+    return authenticate()
+      .then(() => {
+        setUserStatus(UserStatusSchema.LOG_OUT);
+        setIsLoginDialogOpen(false);
+        setisNotificationOpen(true);
+        setNotificationMessage("Successfully logged in via Spotify");
+        setNotificationType(NotificationSchema.SUCCESS);
+      })
+      .catch((error) => {
+        setisNotificationOpen(true);
+        setNotificationMessage(error.message);
+        setNotificationType(NotificationSchema.ERROR);
+      })
+  };
+
+  const handleLogout = () => {
+    if (api !== null) {
+      api.logOut();
+      localStorage.removeItem("ACCESS_TOKEN");
+    }
+    setUserStatus(UserStatusSchema.LOG_IN);
+    setIsLogoutDialogOpen(false);
+    setisNotificationOpen(true);
+    setNotificationMessage("Successfully logged out via Spotify");
+    setNotificationType(NotificationSchema.INFO);
+  };
+
+  const handleNotificationClose = () => {
+    setisNotificationOpen(false);
+    setNotificationMessage("");
+    setNotificationType(NotificationSchema.INFO);
   };
 
   return (
@@ -48,7 +118,10 @@ export function App() {
         }
       }}
     >
-      <UserStatus handleOpen={handleUserDialogOpen} status={UserStatusSchema.LOG_IN} />
+      <UserStatus
+        handleOpen={userStatus === UserStatusSchema.LOG_OUT ? handleLogoutDialogOpen : handleLoginDialogOpen}
+        status={userStatus}
+      />
       <input
         autoFocus={playlist.focus}
         className={"title"}
@@ -108,10 +181,22 @@ export function App() {
           />
         );
       })}
-    <UserDialog
-      onClose={handleUserDialogClose}
-      open={userDialogStatus}
-    />
+      <LoginDialog
+        onClose={handleLoginDialogClose}
+        open={isLoginDialogOpen}
+        onSpotifyLogin={handleSpotifyLogin}
+      />
+      <LogoutDialog
+        onClose={handleLogoutDialogClose}
+        open={isLogoutDialogOpen}
+        onLogout={handleLogout}
+      />
+      <Notification
+        onClose={handleNotificationClose}
+        open={isNotificationOpen}
+        message={notificationMessage}
+        type={notificationType}
+      />
     </div>
   );
 }

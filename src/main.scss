@@ -8,17 +8,17 @@ body {
   border: 0px;
 }
 
+div {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 320px) {
   body {
     position: fixed;
     left: 5%;
     right: 5%;
   }
-}
-
-div {
-  display: flex;
-  flex-direction: column;
 }
 
 .title {

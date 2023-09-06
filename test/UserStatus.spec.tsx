@@ -9,7 +9,7 @@ export default {
 };
 
 export const UserStatusLogInStory = () => (
-  <UserStatus handleOpen={() => {}} status={UserStatusSchema.LOG_IN} />
+  <UserStatus handleOpen={() => {}} status={UserStatusSchema.LOGGED_OUT} />
 );
 
 UserStatusLogInStory.test = async (browser, { component, result }) => {
@@ -17,7 +17,7 @@ UserStatusLogInStory.test = async (browser, { component, result }) => {
 };
 
 export const UserStatusLogOutStory = () => (
-  <UserStatus handleOpen={() => {}} status={UserStatusSchema.LOG_OUT} />
+  <UserStatus handleOpen={() => {}} status={UserStatusSchema.LOGGED_IN} />
 );
 
 UserStatusLogOutStory.test = async (browser, { component, result }) => {

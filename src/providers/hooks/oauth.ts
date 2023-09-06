@@ -14,7 +14,7 @@ export function useSpotify(
 
   function authenticate() {
     if (import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "0") {
-      return null;
+      return new Promise((res) => res(null));
     }
 
     let sdk: SpotifyApi | null = null;

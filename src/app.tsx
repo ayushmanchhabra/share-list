@@ -28,7 +28,7 @@ export function App() {
   const [isLoginDialogOpen, setIsLoginDialogOpen] = useState<boolean>(false);
   const [isLogoutDialogOpen, setIsLogoutDialogOpen] = useState<boolean>(false);
   const [userStatus, setUserStatus] = useState<UserStatusSchema>(
-    UserStatusSchema.LOG_IN,
+    UserStatusSchema.LOGGED_OUT,
   );
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [isNotificationOpen, setisNotificationOpen] = useState<boolean>(false);
@@ -53,7 +53,7 @@ export function App() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      setUserStatus(UserStatusSchema.LOG_OUT);
+      setUserStatus(UserStatusSchema.LOGGED_IN);
     }
   }, [isLoggedIn]);
 
@@ -83,7 +83,7 @@ export function App() {
   const handleSpotifyLogin = (_: any) => {
     return authenticate()
       .then(() => {
-        setUserStatus(UserStatusSchema.LOG_OUT);
+        setUserStatus(UserStatusSchema.LOGGED_IN);
         setIsLoginDialogOpen(false);
         setisNotificationOpen(true);
         setNotificationMessage("Successfully logged in via Spotify");
@@ -101,7 +101,7 @@ export function App() {
       api.logOut();
       localStorage.removeItem("ACCESS_TOKEN");
     }
-    setUserStatus(UserStatusSchema.LOG_IN);
+    setUserStatus(UserStatusSchema.LOGGED_OUT);
     setIsLogoutDialogOpen(false);
     setisNotificationOpen(true);
     setNotificationMessage("Successfully logged out via Spotify");
@@ -132,7 +132,7 @@ export function App() {
     >
       <UserStatus
         handleOpen={
-          userStatus === UserStatusSchema.LOG_OUT
+          userStatus === UserStatusSchema.LOGGED_IN
             ? handleLogoutDialogOpen
             : handleLoginDialogOpen
         }

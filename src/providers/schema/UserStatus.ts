@@ -1,5 +1,5 @@
 export enum UserStatusSchema {
-  LOG_IN = "log-in",
-  LOG_OUT = "log-out",
+  LOGGED_IN = "logged-in",
+  LOGGED_OUT = "logged-out",
   LOADING = "loading",
 }

@@ -13,8 +13,8 @@ import {
   PlaylistSchema,
   SongSchema,
   UserStatusSchema,
-  deserialise,
-  serialise,
+  deserialiseService,
+  serialiseService,
 } from "providers";
 import { useSpotify } from "providers";
 
@@ -59,7 +59,7 @@ export function App() {
 
   useEffect(() => {
     if (id !== undefined) {
-      const appState: PlaylistSchema = deserialise<PlaylistSchema>(id);
+      const appState: PlaylistSchema = deserialiseService<PlaylistSchema>(id);
       setPlaylist(appState);
     }
   }, [id]);
@@ -125,7 +125,7 @@ export function App() {
         }
         if (keyState === "Control" && event.key === "s") {
           event.preventDefault();
-          const url = serialise<PlaylistSchema>(playlist);
+          const url = serialiseService<PlaylistSchema>(playlist);
           navigate(`/${url}`);
         }
       }}

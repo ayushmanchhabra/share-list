@@ -2,7 +2,9 @@ name: gha
 
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
+  push:
+    branches: [ main ]
 
 concurrency:
   group: ${{ github.ref }}

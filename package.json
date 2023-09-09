@@ -47,7 +47,7 @@
     "vite": "4.4.9",
     "vite-plugin-nightwatch": "0.4.5",
     "vite-plugin-svgr": "3.2.0",
-    "vite-tsconfig-paths": "4.2.0"
+    "vite-tsconfig-paths": "4.2.1"
   },
   "pnpm": {
     "patchedDependencies": {

@@ -8,10 +8,10 @@ interface UserProviderProps {
 
 export function useUser() {
   const [user, setUser] = useState<UserSchema | null>(null);
-  const { Provider } = createContext({} as UserSchema);
+  const { Provider } = createContext({});
 
   function UserProvider({ children }: UserProviderProps) {
-    return <Provider value={{ user }}>{children}</Provider>;
+    return <Provider value={{user}}>{children}</Provider>;
   }
 
   return {

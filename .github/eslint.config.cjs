@@ -16,5 +16,5 @@ module.exports = {
       jsx: true,
     },
     project: "./tsconfig.json",
-  }
+  },
 };

@@ -7,7 +7,7 @@ export function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/list" element={<List />} >
+        <Route path="/list" element={<List />}>
           <Route path=":id" element={<List />} />
         </Route>
       </Routes>

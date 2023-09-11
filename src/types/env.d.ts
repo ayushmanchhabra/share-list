@@ -8,6 +8,6 @@ interface ImportMetaEnv {
   readonly VITE_SPOTIFY_REDIRECT_URI: string;
 }
 
-interface ImportMeta {
+export interface ImportMeta {
   readonly env: ImportMetaEnv;
 }

@@ -10,7 +10,7 @@ import { UserStatusSchema } from "providers";
 import style from "./UserStatus.module.css";
 
 interface UserStatusProps {
-  handleOpen: (event: any) => void;
+  handleOpen: () => void;
   status?: UserStatusSchema;
 }
 

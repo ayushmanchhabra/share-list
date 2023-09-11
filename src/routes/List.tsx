@@ -64,7 +64,7 @@ export function List() {
     }
   }, [id]);
 
-  const handleLoginDialogOpen = (_: any) => {
+  const handleLoginDialogOpen = () => {
     setIsLoginDialogOpen(true);
   };
 
@@ -72,7 +72,7 @@ export function List() {
     setIsLoginDialogOpen(false);
   };
 
-  const handleLogoutDialogOpen = (_: any) => {
+  const handleLogoutDialogOpen = () => {
     setIsLogoutDialogOpen(true);
   };
 
@@ -80,7 +80,7 @@ export function List() {
     setIsLogoutDialogOpen(false);
   };
 
-  const handleSpotifyLogin = (_: any) => {
+  const handleSpotifyLogin = () => {
     return authenticate()
       .then(() => {
         setUserStatus(UserStatusSchema.LOGGED_IN);
@@ -166,7 +166,7 @@ export function List() {
             key={idx}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
-                let tempItems = [...playlist.songs];
+                const tempItems = [...playlist.songs];
                 tempItems[idx].title += " ";
                 setPlaylist({
                   ...playlist,
@@ -174,8 +174,8 @@ export function List() {
                 });
               }
               if (event.key === "Backspace") {
-                let tempItems = [...playlist.songs];
-                let item = tempItems[idx];
+                const tempItems = [...playlist.songs];
+                const item = tempItems[idx];
                 if (item.title.length === 0 && idx >= 0) {
                   event.currentTarget.blur();
                   const prev = event.currentTarget
@@ -187,7 +187,7 @@ export function List() {
               }
             }}
             onChange={(event) => {
-              let tempItems = [...playlist.songs];
+              const tempItems = [...playlist.songs];
               tempItems[idx].title = event.target.value;
               tempItems[idx].focus = true;
               setPlaylist({ ...playlist, songs: [...tempItems] });

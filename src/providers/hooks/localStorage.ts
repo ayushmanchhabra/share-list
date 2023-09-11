@@ -6,7 +6,7 @@ export function useLocalStorage<T>(key: string) {
 
   useEffect(() => {
     window.localStorage.setItem(key, JSON.stringify(item));
-  }, [item]);
+  }, [item, key]);
 
   return { item, setItem };
 }

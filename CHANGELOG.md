@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+- Convert SPA (Single Page App) into MPA (Multi Page App).
 - Move `*Schema` under `providers` namespace.
 
 ## [0.6.0] - 2023-09-05

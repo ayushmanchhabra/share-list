@@ -7,6 +7,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -16,10 +17,5 @@ module.exports = {
       jsx: true,
     },
     project: "./tsconfig.json",
-  },
-  rules: {
-    // https://github.com/nightwatchjs/nightwatch/issues/792
-    "no-unused-vars": "off",
-    "no-undef": "off",
   },
 };

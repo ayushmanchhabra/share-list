@@ -6,14 +6,13 @@ import {
   DialogContentText,
   DialogTitle,
   IconButton,
-  SvgIcon,
 } from "@mui/material";
 import { Close as CloseIcon } from "@mui/icons-material";
 
 interface LogoutDialogProps {
   open: boolean;
-  onClose: (event: any) => void;
-  onLogout: (event: any) => void;
+  onClose: () => void;
+  onLogout: () => void;
 }
 
 export function LogoutDialog({ open, onClose, onLogout }: LogoutDialogProps) {

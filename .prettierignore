@@ -1,6 +1,4 @@
-dist
-logs
 node_modules
-patches
-tests_output
+
+dist
 pnpm-lock.yaml

@@ -2,9 +2,7 @@ name: gha
 
 on:
   pull_request:
-    branches: [ main ]
-  push:
-    branches: [ main ]
+    branches: [main]
 
 concurrency:
   group: ${{ github.ref }}
@@ -12,7 +10,7 @@ concurrency:
 
 jobs:
   ci:
-    runs-on: windows-2022
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.0.0

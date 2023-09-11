@@ -126,7 +126,7 @@ export function List() {
         if (keyState === "Control" && event.key === "s") {
           event.preventDefault();
           const url = serialiseService<PlaylistSchema>(playlist);
-          navigate(`/${url}`);
+          navigate(`/list/${url}`);
         }
       }}
     >

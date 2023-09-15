@@ -1,94 +1,65 @@
-import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, IconButton, Typography } from "@mui/material";
+import { ArrowForward as ArrowForwardIcon } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+
+import style from "./Home.module.scss";
 
 export function Home() {
+  const navigate = useNavigate();
+
   return (
-    <Box sx={{
-      margin: "10px"
-    }}>
-      <Typography variant="h1" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "600",
-        color: "#3d3a42"
-      }} >Share List</Typography>
-      <Typography variant="h4" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "600",
-        color: "#5c5b5e"
-      }} >Share and remix music across platforms.</Typography>
+    <Box className={style.Home}>
+      <Typography variant="h1" className={style.Header}>
+        Share List
+      </Typography>
+      <Typography variant="h4" className={style.SubHeader}>
+        Share and remix music across platforms.
+      </Typography>
       <br />
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }} >You really like X streaming service.
+      <Typography variant="h6" className={style.Content}>
+        You really like X streaming service.
       </Typography>
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }} >But your family are on Y streaming service and friends are on Z streaming services.
+      <Typography variant="h6" className={style.Content}>
+        But your family is on Y streaming service and your friends are on Z
+        streaming service.
       </Typography>
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }}
-      >
+      <Typography variant="h6" className={style.Content}>
         Sharing your music becomes unnecessarily hard.
       </Typography>
       <br />
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }}
-      >
+      <Typography variant="h6" className={style.Content}>
         Well, not anymore:
       </Typography>
 
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }}
-      >
+      <Typography variant="h6" className={style.Content}>
         - Import existing playlists via X streaming service
       </Typography>
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }}
-      >
+      <Typography variant="h6" className={style.Content}>
         - Send the uniquely generated link to your family.
       </Typography>
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }}
-      >
-        - You friend will open the link, may edit and export the playlist to Y streaming service.
+      <Typography variant="h6" className={style.Content}>
+        - You family will open the link, may edit and export the playlist to Y
+        streaming service.
       </Typography>
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }}
-      >
+      <Typography variant="h6" className={style.Content}>
         - Send the uniquely generated link to your friend.
       </Typography>
-      <Typography variant="h6" sx={{
-        fontFamily: "system-ui",
-        fontWeight: "400",
-        color: "#5c5b5e"
-      }}
-      >
-        - You family will open the link, may edit and export the playlist to Z streaming service.
+      <Typography variant="h6" className={style.Content}>
+        - You friend will open the link, may edit and export the playlist to Z
+        streaming service.
       </Typography>
-
-      <Link to="/list">Get Started</Link>
+      <br />
+      <Typography variant="h6" className={style.Content}>
+        Get Started...
+        <IconButton
+          className={style.Button}
+          onClick={() => {
+            navigate("/list");
+          }}
+        >
+          <ArrowForwardIcon />
+        </IconButton>
+      </Typography>
     </Box>
   );
 }

@@ -1,10 +1,11 @@
-import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
-import { CheckBox } from "@mui/icons-material";
+import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export function Home() {
   return (
-    <Box>
+    <Box sx={{
+      margin: "10px"
+    }}>
       <Typography variant="h1" sx={{
         fontFamily: "system-ui",
         fontWeight: "600",
@@ -14,8 +15,8 @@ export function Home() {
         fontFamily: "system-ui",
         fontWeight: "600",
         color: "#5c5b5e"
-      }} >Share music playlists across platforms.</Typography>
-      <br/>
+      }} >Share and remix music across platforms.</Typography>
+      <br />
       <Typography variant="h6" sx={{
         fontFamily: "system-ui",
         fontWeight: "400",
@@ -26,36 +27,68 @@ export function Home() {
         fontFamily: "system-ui",
         fontWeight: "400",
         color: "#5c5b5e"
-      }} >But your family and friends are on Y or Z streaming services.
+      }} >But your family are on Y streaming service and friends are on Z streaming services.
       </Typography>
       <Typography variant="h6" sx={{
         fontFamily: "system-ui",
         fontWeight: "400",
         color: "#5c5b5e"
-      }} >Sharing your music becomes unnecessarily hard.
+      }}
+      >
+        Sharing your music becomes unnecessarily hard.
       </Typography>
+      <br />
       <Typography variant="h6" sx={{
         fontFamily: "system-ui",
         fontWeight: "400",
         color: "#5c5b5e"
-      }} >Well, not anymore.
+      }}
+      >
+        Well, not anymore:
       </Typography>
 
-      <List>
-        <ListItem>
-          <CheckBox />
-          <ListItemText>
-            Import existing playlists via streaming service of choice
-          </ListItemText>
-        </ListItem>
-        <ListItem>
-          <CheckBox />
-          <ListItemText>
-            Edit the playlist and send it to your friend on another streaming service
-          </ListItemText>
-        </ListItem>
-      </List>
-      {/* <Link to="/list">Share List</Link> */}
+      <Typography variant="h6" sx={{
+        fontFamily: "system-ui",
+        fontWeight: "400",
+        color: "#5c5b5e"
+      }}
+      >
+        - Import existing playlists via X streaming service
+      </Typography>
+      <Typography variant="h6" sx={{
+        fontFamily: "system-ui",
+        fontWeight: "400",
+        color: "#5c5b5e"
+      }}
+      >
+        - Send the uniquely generated link to your family.
+      </Typography>
+      <Typography variant="h6" sx={{
+        fontFamily: "system-ui",
+        fontWeight: "400",
+        color: "#5c5b5e"
+      }}
+      >
+        - You friend will open the link, may edit and export the playlist to Y streaming service.
+      </Typography>
+      <Typography variant="h6" sx={{
+        fontFamily: "system-ui",
+        fontWeight: "400",
+        color: "#5c5b5e"
+      }}
+      >
+        - Send the uniquely generated link to your friend.
+      </Typography>
+      <Typography variant="h6" sx={{
+        fontFamily: "system-ui",
+        fontWeight: "400",
+        color: "#5c5b5e"
+      }}
+      >
+        - You family will open the link, may edit and export the playlist to Z streaming service.
+      </Typography>
+
+      <Link to="/list">Get Started</Link>
     </Box>
   );
 }

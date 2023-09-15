@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.7.0] - 2023-09-15
+
+### Added
+
+- Landing page to describe the application.
+
 ### Changed
 
 - Convert SPA (Single Page App) into MPA (Multi Page App).

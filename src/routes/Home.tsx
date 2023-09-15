@@ -38,14 +38,14 @@ export function Home() {
         - Send the uniquely generated link to your family.
       </Typography>
       <Typography variant="h6" className={style.Content}>
-        - You family will open the link, may edit and export the playlist to Y
+        - Your family will open the link, may edit and export the playlist to Y
         streaming service.
       </Typography>
       <Typography variant="h6" className={style.Content}>
         - Send the uniquely generated link to your friend.
       </Typography>
       <Typography variant="h6" className={style.Content}>
-        - You friend will open the link, may edit and export the playlist to Z
+        - Your friend will open the link, may edit and export the playlist to Z
         streaming service.
       </Typography>
       <br />

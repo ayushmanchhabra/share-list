@@ -9,7 +9,7 @@ export function Home() {
 
   return (
     <Box className={style.Home}>
-      <Typography variant="h1" className={style.Header}>
+      <Typography variant="h1" className={style.Header} data-testid="title">
         Share List
       </Typography>
       <Typography variant="h4" className={style.SubHeader}>

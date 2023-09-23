@@ -10,10 +10,14 @@ export function Home() {
   return (
     <Box className={style.Home}>
       <Typography variant="h1" className={style.Header} data-testid="title">
-        Share List
+        {"Share List"}
       </Typography>
-      <Typography variant="h4" className={style.SubHeader}>
-        Share and remix music across platforms.
+      <Typography
+        variant="h4"
+        className={style.SubHeader}
+        data-testid="subtitle"
+      >
+        {"Share and remix music across platforms."}
       </Typography>
       <br />
       <Typography variant="h6" className={style.Content}>
@@ -26,11 +30,11 @@ export function Home() {
         {"They'll export the playlist to their own streaming service."}
         <br />
         {"Or they'll tweak it and send it to others."}
-      </Typography>
-      <Typography variant="h6" className={style.Content}>
-        Get Started...
+        <br />
+        {"Get Started..."}
         <IconButton
           className={style.Button}
+          data-testid="cta"
           onClick={() => {
             navigate("/list");
           }}

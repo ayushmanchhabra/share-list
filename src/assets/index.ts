@@ -3,6 +3,6 @@
 /**
  * @see https://simpleicons.org/?q=spotify
  */
-import SpotifyIcon from "./spotify.svg";
+import SpotifyIcon from "./spotify.svg?react";
 
 export { SpotifyIcon };

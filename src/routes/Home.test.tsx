@@ -1,16 +1,20 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { describe, it, expect } from "vitest";
+import { beforeAll, describe, it, expect } from "vitest";
 
 import { Home } from "routes";
 
 describe("Home route", () => {
-  it("renders title", () => {
+
+  beforeAll(() => {
     render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
     );
+  });
+
+  it("renders title", () => {
 
     screen.debug();
 

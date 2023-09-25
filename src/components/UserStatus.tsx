@@ -7,7 +7,7 @@ import {
 
 import { UserStatusSchema } from "providers";
 
-import style from "./UserStatus.module.css";
+import style from "./UserStatus.module.scss";
 
 interface UserStatusProps {
   handleOpen: () => void;

@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "NODE_VER=$(jq -r '.engines.node' package.json | sed 's/v//' )" >> $GITHUB_ENV
       - name: Setup Node
-        uses: actions/setup-node@v3.8.2
+        uses: actions/setup-node@v4.0.0
         with:
           node-version: ${{ env.NODE_VER }}
       - name: Enable corepack

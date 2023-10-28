@@ -1,4 +1,4 @@
-export { useUser } from "./contexts/user";
+export { useUser } from "./contexts/User";
 
 export { useLocalStorage } from "./hooks/localStorage";
 export { useSpotify } from "./hooks/oauth";

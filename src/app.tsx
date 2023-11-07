@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { useUser } from "providers";
-import { Home, List } from "routes";
+import { Home, List, Login } from "routes";
 
 export function App() {
   const { UserProvider } = useUser();
@@ -13,6 +13,7 @@ export function App() {
           <Route path="/list" element={<List />}>
             <Route path=":id" element={<List />} />
           </Route>
+          <Route path="/" element={<Login />} />
         </Routes>
       </Router>
     </UserProvider>

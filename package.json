@@ -20,8 +20,8 @@
     "@mui/icons-material": "5.14.18",
     "@mui/material": "5.14.18",
     "@spotify/web-api-ts-sdk": "1.1.2",
-    "react": "18.3.0-canary-432b9f1d9-20231110",
-    "react-dom": "18.3.0-canary-432b9f1d9-20231110",
+    "react": "18.3.0-next-fecc288b7-20221025",
+    "react-dom": "18.3.0-next-fecc288b7-20221025",
     "react-router-dom": "6.18.0"
   },
   "devDependencies": {

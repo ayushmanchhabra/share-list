@@ -13,13 +13,7 @@ div {
   flex-direction: column;
 }
 
-@media (max-width: 320px) {
-  body {
-    position: fixed;
-    left: 5%;
-    right: 5%;
-  }
-}
+// TODO: refactor out global list styles into css modules
 
 .title {
   height: 64px;

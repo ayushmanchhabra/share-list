@@ -25,15 +25,9 @@ describe("Home route", () => {
     expect(screen.getByTestId("subtitle").textContent).toBe(
       "Share and remix music across platforms.",
     );
-  });
 
-  it("button is enabled", () => {
-    render(
-      <MemoryRouter>
-        <Home />
-      </MemoryRouter>,
+    expect(screen.getByTestId("content").textContent).toBe(
+      "Coming soon...",
     );
-
-    expect(screen.getByTestId("cta")).toHaveProperty("disabled", false);
   });
 });

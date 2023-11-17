@@ -1,10 +1,8 @@
 import { Box, Typography } from "@mui/material";
-// import { useNavigate } from "react-router-dom";
 
 import style from "./Home.module.scss";
 
 export function Home() {
-  // const navigate = useNavigate();
 
   return (
     <Box className={style.Home}>
@@ -23,23 +21,11 @@ export function Home() {
       <Typography
         variant="h6"
         className={style.Content}
-        data-testid="subtitle"
+        data-testid="content"
       >
         {"Coming soon..."}
       </Typography>
       <br />
-      {/*
-      <Button
-        className={style.Button}
-        data-testid="cta"
-        onClick={() => {
-          navigate("/login");
-        }}
-        variant="outlined"
-        >
-        {"Get Started"}
-      </Button>
-      */}
     </Box>
   );
 }

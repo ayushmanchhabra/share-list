@@ -18,4 +18,9 @@ module.exports = {
     },
     project: "./tsconfig.json",
   },
+  settings: {
+    react: {
+      version: "detect"
+    }
+  }
 };

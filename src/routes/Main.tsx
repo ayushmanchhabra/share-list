@@ -1,5 +1,5 @@
-import { Search } from "@mui/icons-material";
-import { AppBar, Box, TextField, Typography } from "@mui/material";
+import { Logout, Search } from "@mui/icons-material";
+import { AppBar, Box, IconButton, TextField, Typography } from "@mui/material";
 
 export function Main() {
   return (
@@ -38,6 +38,7 @@ export function Main() {
           placeholder="Search..."
           variant="standard"
         />
+        <IconButton sx={{ color: "white"}}><Logout /></IconButton>
       </AppBar>
     </Box>
   );

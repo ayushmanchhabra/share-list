@@ -39,9 +39,7 @@ export function useSpotify(
       setApi(api);
       setAccessToken(response.accessToken);
     } else {
-      console.error(
-        "Unable to authenticate with Spotify. Please try again.",
-      );
+      console.error("Unable to authenticate with Spotify. Please try again.");
     }
   }
 

@@ -38,7 +38,9 @@ export function Main() {
           placeholder="Search..."
           variant="standard"
         />
-        <IconButton sx={{ color: "white"}}><Logout /></IconButton>
+        <IconButton sx={{ color: "white" }}>
+          <Logout />
+        </IconButton>
       </AppBar>
     </Box>
   );

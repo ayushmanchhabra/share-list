@@ -1,5 +1,5 @@
 export { useLocalStorage } from "./hooks/localStorage";
-export { useSpotify } from "./hooks/oauth";
+export { useSpotify } from "./hooks/useSpotify";
 
 export type { ItemSchema } from "./schema/Item";
 export type { PlaylistSchema } from "./schema/Playlist";

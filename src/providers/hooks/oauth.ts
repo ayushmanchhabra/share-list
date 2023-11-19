@@ -10,11 +10,11 @@ export function useSpotify(
 ) {
   const [api, setApi] = useState<SpotifyApi | null>(null);
   const { item: accessToken, setItem: setAccessToken } =
-    useLocalStorage<AccessToken>("ACCESS_TOKEN");
+    useLocalStorage<AccessToken>("SPOTIFY_ACCESS_TOKEN");
 
-  function authenticate() {
+  async function authenticate(): Promise<void | null> {
     if (import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "0") {
-      return new Promise((res) => res(null));
+      return null;
     }
 
     let sdk: SpotifyApi | null = null;
@@ -34,19 +34,15 @@ export function useSpotify(
       );
     }
 
-    return sdk
-      .authenticate()
-      .then((response) => {
-        if (response.authenticated) {
-          setApi(api);
-          setAccessToken(response.accessToken);
-        } else {
-          console.error(
-            "Unable to authenticate with Spotify. Please try again.",
-          );
-        }
-      })
-      .catch();
+    const response = await sdk.authenticate();
+    if (response.authenticated) {
+      setApi(api);
+      setAccessToken(response.accessToken);
+    } else {
+      console.error(
+        "Unable to authenticate with Spotify. Please try again.",
+      );
+    }
   }
 
   return {

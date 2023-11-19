@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import { Home, List, Login } from "routes";
+import { Home, List, Login, Main } from "routes";
 
 export function App() {
   return (
@@ -11,6 +11,7 @@ export function App() {
         <Route path="/list" element={<List />}>
           <Route path=":id" element={<List />} />
         </Route>
+        <Route path="/main" element={<Main />} />
       </Routes>
     </Router>
   );

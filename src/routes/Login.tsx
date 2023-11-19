@@ -18,7 +18,7 @@ import style from "./Login.module.scss";
 export function Login() {
   return (
     <Box className={style.Login}>
-      <Card className={style.Card}>
+      <Card className={style.Card} raised>
         <CardHeader className={style.CardHeader} title={"Login via:"} />
         <CardContent>
           {import.meta.env.VITE_ENABLE_APPLE_MUSIC === "1" && (

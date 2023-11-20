@@ -1,6 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":disableDependencyDashboard"],
-  "automerge": true,
-  "automergeSchedule": ["every saturday"]
+  "automerge": false,
+  "packageRules": [
+    {
+      "description": "Allow React regular and canary releases",
+      "matchPackagePatterns": ["react", "react-dom"],
+      "allowedVersions": "/^\\d+\\.\\d+\\.\\d+(-canary\\.(.+))?$/"
+    }
+  ]
 }

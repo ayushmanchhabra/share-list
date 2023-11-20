@@ -12,14 +12,16 @@ export function useSpotify(
   const { item: accessToken, setItem: setAccessToken } =
     useLocalStorage<AccessToken>("SPOTIFY_ACCESS_TOKEN");
 
-  async function authenticate(): Promise<void | null> {
+  async function authenticate(): Promise<void> {
     if (import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "0") {
-      return null;
+      throw new Error("Spotify is not enabled.");
     }
 
     let sdk: SpotifyApi | null = null;
 
-    if (accessToken !== null) {
+    console.log(!accessToken)
+
+    if (!accessToken) {
       sdk = SpotifyApi.withAccessToken(
         clientId,
         accessToken as AccessToken,
@@ -34,12 +36,14 @@ export function useSpotify(
       );
     }
 
-    const response = await sdk.authenticate();
-    if (response.authenticated) {
-      setApi(api);
-      setAccessToken(response.accessToken);
-    } else {
-      console.error("Unable to authenticate with Spotify. Please try again.");
+    try {
+      const response = await sdk.authenticate();
+      if (response.authenticated) {
+        setApi(api);
+        setAccessToken(response.accessToken);
+      }
+    } catch (error) {
+      throw new Error("Unable to authenticate with Spotify. Please try again.", error);
     }
   }
 

@@ -1,8 +1,18 @@
 import { Box, Typography } from "@mui/material";
 
+import { useEffect } from "react";
+
 import style from "./Home.module.scss";
+import { useUser } from "providers";
 
 export function Home() {
+
+  const { user } = useUser();
+
+  useEffect(() => {
+    console.log(localStorage.getItem("SPOTIFY_ACCESS_TOKEN"))
+  }, [user]);
+
   return (
     <Box className={style.Home}>
       <Typography variant="h2" className={style.Header} data-testid="title">

@@ -14,9 +14,14 @@ export function useUser() {
     return <Provider value={user}>{children}</Provider>;
   }
 
+  function isAuthenticated() {
+    return user?.authenticated;
+  }
+
   return {
     user,
     setUser,
     UserProvider,
+    isAuthenticated,
   };
 }

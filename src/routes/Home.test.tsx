@@ -26,8 +26,6 @@ describe("Home route", () => {
       "Share and remix music playlists across platforms.",
     );
 
-    expect(screen.getByTestId("content").textContent).toBe(
-      "Coming soon...",
-    );
+    expect(screen.getByTestId("content").textContent).toBe("Coming soon...");
   });
 });

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "18.18.2"
+    "node": "20.5.1"
   },
   "packageManager": "pnpm@8.10.5",
   "scripts": {
@@ -20,8 +20,8 @@
     "@mui/icons-material": "5.14.18",
     "@mui/material": "5.14.18",
     "@spotify/web-api-ts-sdk": "1.1.2",
-    "react": "18.3.0-next-fecc288b7-20221025",
-    "react-dom": "18.3.0-next-fecc288b7-20221025",
+    "react": "18.3.0-canary-bbb9cb116-20231117",
+    "react-dom": "18.3.0-canary-bbb9cb116-20231117",
     "react-router-dom": "6.19.0"
   },
   "devDependencies": {

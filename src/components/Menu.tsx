@@ -3,10 +3,14 @@ import { AppBar, IconButton, TextField, Typography } from "@mui/material";
 
 interface MenuProps {
     isAuthenticated: boolean;
+    handleLogin: () => void;
+    handleLogout: () => void;
 }
 
 export function Menu({
     isAuthenticated,
+    handleLogin,
+    handleLogout,
 }: MenuProps) {
     return (
         <AppBar
@@ -45,13 +49,15 @@ export function Menu({
                     />
                 </>
             )}
-            <IconButton sx={isAuthenticated ? {
-                color: "white",
-            } : {
-                color: "white",
-                position: "absolute",
-                right: "10px"
-            }}>
+            <IconButton
+                onClick={isAuthenticated ? handleLogout : handleLogin}
+                sx={isAuthenticated ? {
+                    color: "white",
+                } : {
+                    color: "white",
+                    position: "absolute",
+                    right: "10px"
+                }}>
                 {isAuthenticated ? <Logout /> : <Login />}
             </IconButton>
         </AppBar>

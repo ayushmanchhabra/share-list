@@ -38,8 +38,8 @@ devDependencies:
     specifier: 14.1.2
     version: 14.1.2(react-dom@18.3.0-canary-bbb9cb116-20231117)(react@18.3.0-canary-bbb9cb116-20231117)
   '@tsconfig/vite-react':
-    specifier: 2.0.1
-    version: 2.0.1
+    specifier: 3.0.0
+    version: 3.0.0
   '@types/node':
     specifier: 20.10.4
     version: 20.10.4
@@ -1557,8 +1557,8 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /@tsconfig/vite-react@2.0.1:
-    resolution: {integrity: sha512-Sxt6vfbhgEzV2TH/02wLEiM7RJVYGx1mn2INlzovXS6/Fnm7G+CyOHZUD5c5fOlQvH54LNhdGgfI/9fuK6+kuQ==}
+  /@tsconfig/vite-react@3.0.0:
+    resolution: {integrity: sha512-haOFbphpavQ1+eyQjeqvlz7sRkQue/bS0GvFmraHml31Ufhv+7juUSc8PVe0In7sly+n+5zTLmzc287KciiGXg==}
     dev: true
 
   /@types/aria-query@5.0.2:

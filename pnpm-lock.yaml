@@ -77,14 +77,14 @@ devDependencies:
     specifier: 3.1.1
     version: 3.1.1
   sass:
-    specifier: 1.69.5
-    version: 1.69.5
+    specifier: 1.69.6
+    version: 1.69.6
   typescript:
     specifier: 5.3.3
     version: 5.3.3
   vite:
     specifier: 5.0.10
-    version: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
+    version: 5.0.10(@types/node@20.10.5)(sass@1.69.6)
   vite-plugin-svgr:
     specifier: 4.2.0
     version: 4.2.0(typescript@5.3.3)(vite@5.0.10)
@@ -93,7 +93,7 @@ devDependencies:
     version: 4.2.3(typescript@5.3.3)(vite@5.0.10)
   vitest:
     specifier: 1.1.0
-    version: 1.1.0(@types/node@20.10.5)(jsdom@23.0.1)(sass@1.69.5)
+    version: 1.1.0(@types/node@20.10.5)(jsdom@23.0.1)(sass@1.69.6)
 
 packages:
 
@@ -1545,7 +1545,7 @@ packages:
       dom-accessibility-api: 0.5.16
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.1.0(@types/node@20.10.5)(jsdom@23.0.1)(sass@1.69.5)
+      vitest: 1.1.0(@types/node@20.10.5)(jsdom@23.0.1)(sass@1.69.6)
     dev: true
 
   /@testing-library/react@14.1.2(react-dom@18.3.0-canary-bbb9cb116-20231117)(react@18.3.0-canary-bbb9cb116-20231117):
@@ -1788,7 +1788,7 @@ packages:
       vite: ^4 || ^5
     dependencies:
       '@swc/core': 1.3.96
-      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
+      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.6)
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
@@ -1804,7 +1804,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.6)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
+      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3934,8 +3934,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass@1.69.5:
-    resolution: {integrity: sha512-qg2+UCJibLr2LCVOt3OlPhr/dqVHWOa9XtZf2OjbLs/T4VPSJ00udtgJxH3neXZm+QqX8B+3cU7RaLqp1iVfcQ==}
+  /sass@1.69.6:
+    resolution: {integrity: sha512-qbRr3k9JGHWXCvZU77SD2OTwUlC+gNT+61JOLcmLm+XqH4h/5D+p4IIsxvpkB89S9AwJOyb5+rWNpIucaFxSFQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4322,7 +4322,7 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /vite-node@1.1.0(@types/node@20.10.5)(sass@1.69.5):
+  /vite-node@1.1.0(@types/node@20.10.5)(sass@1.69.6):
     resolution: {integrity: sha512-jV48DDUxGLEBdHCQvxL1mEh7+naVy+nhUUUaPAZLd3FJgXuxQiewHcfeZebbJ6onDqNGkP4r3MhQ342PRlG81Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4331,7 +4331,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
+      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4351,7 +4351,7 @@ packages:
       '@rollup/pluginutils': 5.0.5
       '@svgr/core': 8.1.0(typescript@5.3.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0)
-      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
+      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.6)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -4369,13 +4369,13 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.1.2(typescript@5.3.3)
-      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
+      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.6)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: true
 
-  /vite@5.0.10(@types/node@20.10.5)(sass@1.69.5):
+  /vite@5.0.10(@types/node@20.10.5)(sass@1.69.6):
     resolution: {integrity: sha512-2P8J7WWgmc355HUMlFrwofacvr98DAjoE52BfdbwQtyLH06XKwaL/FMnmKM2crF0iX4MpmMKoDlNCB1ok7zHCw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4407,12 +4407,12 @@ packages:
       esbuild: 0.19.5
       postcss: 8.4.32
       rollup: 4.4.1
-      sass: 1.69.5
+      sass: 1.69.6
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@1.1.0(@types/node@20.10.5)(jsdom@23.0.1)(sass@1.69.5):
+  /vitest@1.1.0(@types/node@20.10.5)(jsdom@23.0.1)(sass@1.69.6):
     resolution: {integrity: sha512-oDFiCrw7dd3Jf06HoMtSRARivvyjHJaTxikFxuqJjO76U436PqlVw1uLn7a8OSPrhSfMGVaRakKpA2lePdw79A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4457,8 +4457,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.8.1
-      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.5)
-      vite-node: 1.1.0(@types/node@20.10.5)(sass@1.69.5)
+      vite: 5.0.10(@types/node@20.10.5)(sass@1.69.6)
+      vite-node: 1.1.0(@types/node@20.10.5)(sass@1.69.6)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

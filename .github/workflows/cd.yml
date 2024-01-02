@@ -24,6 +24,6 @@ jobs:
       - name: Enable corepack
         run: corepack enable
       - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+        run: npm ci
       - name: Build project
-        run: pnpm bld
+        run: npm run bld

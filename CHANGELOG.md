@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+- Switch from `pnpm` to npm.
 - Update landing page and remove getting started button.
 
 ## [0.7.0] - 2023-09-15

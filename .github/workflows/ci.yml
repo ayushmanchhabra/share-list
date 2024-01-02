@@ -24,8 +24,8 @@ jobs:
       - name: Enable corepack
         run: corepack enable
       - name: Install dependencies
-        run: pnpm i --frozen-lockfile
+        run: npm ci
       - name: Lint project
-        run: pnpm lnt
+        run: npm run lnt
       - name: Test project
-        run: pnpm e2e
+        run: npm run e2e

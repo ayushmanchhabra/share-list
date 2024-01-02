@@ -12,7 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Refactor Home route test suite.
 - Extract out strings from JSX.
 - Switch from `pnpm` to `npm` package manager.
-- Update landing page and remove getting started button.
+- Update landing page.
+
+## Removed
+
+- npm package `prettier`.
+- Getting started button.
 
 ## [0.7.0] - 2023-09-15
 

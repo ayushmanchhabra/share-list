@@ -1,20 +1,21 @@
 import { Box, Typography } from "@mui/material";
 
+import { TITLE, SUBTITLE, CONTENT } from "./Home.content.ts";
 import style from "./Home.module.scss";
 
 export function Home() {
   return (
     <Box className={style.Home}>
       <Typography variant="h2" className={style.Header} data-testid="title">
-        {"Share List"}
+        {TITLE}
       </Typography>
       <br />
       <Typography variant="h4" className={style.Content} data-testid="subtitle">
-        {"Share and remix music playlists across platforms."}
+        {SUBTITLE}
       </Typography>
       <br />
       <Typography variant="h6" className={style.Content} data-testid="content">
-        {"Coming soon..."}
+        {CONTENT}
       </Typography>
       <br />
     </Box>

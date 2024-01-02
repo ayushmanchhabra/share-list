@@ -1,31 +1,37 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { describe, it, expect } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import { Home } from "routes";
 
+import { TITLE, SUBTITLE, CONTENT } from "./Home.content.ts";
+
 describe("Home route", () => {
-  it("renders title", () => {
-    render(
+  let unmountHome: () => void = () => {};
+
+  beforeEach(() => {
+    const { unmount } = render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
     );
 
-    expect(screen.getByTestId("title").textContent).toBe("Share List");
+    unmountHome = unmount;
+  });
+
+  it("renders title", () => {
+    expect(screen.getByTestId("title").textContent).toBe(TITLE);
   });
 
   it("renders subtitle", () => {
-    render(
-      <MemoryRouter>
-        <Home />
-      </MemoryRouter>,
-    );
+    expect(screen.getByTestId("subtitle").textContent).toBe(SUBTITLE);
+  });
 
-    expect(screen.getByTestId("subtitle").textContent).toBe(
-      "Share and remix music playlists across platforms.",
-    );
+  it("renders call to action", () => {
+    expect(screen.getByTestId("content").textContent).toBe(CONTENT);
+  });
 
-    expect(screen.getByTestId("content").textContent).toBe("Coming soon...");
+  afterEach(() => {
+    unmountHome();
   });
 });

@@ -14,7 +14,7 @@ import {
   YouTube as YouTubeIcon,
 } from "@mui/icons-material";
 
-import { SpotifyIcon } from "assets";
+import { SpotifyIcon } from "../assets";
 
 interface LoginDialogProps {
   open: boolean;

@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src",
+    "baseUrl": "./",
     "paths": {
       "assets": ["assets/index.ts"],
       "components": ["components/index.ts"],
@@ -25,9 +25,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "typeRoots": ["./src/types"]
+    "typeRoots": ["types"]
   },
-  "include": ["src"],
+  "include": ["types", "app.tsx", "routes", "providers", "main.tsx", "vite-env.d.ts"],
   "exclude": ["node_modules", "out"],
   "references": [
     {

@@ -5,7 +5,7 @@ import {
   Logout as LogoutIcon,
 } from "@mui/icons-material";
 
-import { UserStatusSchema } from "providers";
+import { UserStatusSchema } from "../providers";
 
 import style from "./UserStatus.module.scss";
 

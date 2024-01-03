@@ -1,8 +1,10 @@
 name: gha
 
 on:
+  push:
+    branches: ["*"]
   pull_request:
-    branches: [main]
+    branches: ["*"]
 
 concurrency:
   group: ${{ github.ref }}

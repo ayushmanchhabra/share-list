@@ -27,7 +27,7 @@
     "noFallthroughCasesInSwitch": true,
     "typeRoots": ["types"]
   },
-  "include": ["types", "app.tsx", "routes", "providers", "main.tsx", "vite-env.d.ts"],
+  "include": ["components", "providers", "routes", "types", "app.tsx", "main.tsx", "vite.config.ts", "vite.setup.ts", "vite-env.d.ts"],
   "exclude": ["node_modules", "out"],
   "references": [
     {

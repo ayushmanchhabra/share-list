@@ -1,6 +1,8 @@
 import { Login, Logout, Search } from "@mui/icons-material";
 import { AppBar, IconButton, TextField, Typography } from "@mui/material";
 
+import { TITLE } from "./Menu.content.ts";
+
 interface MenuProps {
     isAuthenticated: boolean;
     handleLogin: () => void;
@@ -31,7 +33,7 @@ export function Menu({
                     marginLeft: "10px",
                 }}
             >
-                SHARE LIST
+                {TITLE}
             </Typography>
             {isAuthenticated && (
                 <>

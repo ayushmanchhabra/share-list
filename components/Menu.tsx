@@ -2,6 +2,7 @@ import { Login, Logout, Search } from "@mui/icons-material";
 import { AppBar, IconButton, TextField, Typography } from "@mui/material";
 
 import { TITLE } from "./Menu.content.ts";
+import style from "./Menu.module.scss";
 
 interface MenuProps {
     isAuthenticated: boolean;
@@ -17,21 +18,12 @@ export function Menu({
     return (
         <AppBar
             position="static"
-            sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                padding: 1,
-            }}
+            className={style.Menu}
         >
             <Typography
                 variant="h6"
-                fontWeight={"600"}
-                sx={{
-                    width: "200px",
-                    minWidth: "140px",
-                    marginLeft: "10px",
-                }}
+                fontWeight="600"
+                textTransform="capitalize"
             >
                 {TITLE}
             </Typography>
@@ -41,10 +33,7 @@ export function Menu({
                     <TextField
                         fullWidth
                         inputProps={{
-                            sx: {
-                                color: "white",
-                                marginLeft: "10px",
-                            },
+                            className: style.SearchText
                         }}
                         placeholder="Search..."
                         variant="standard"

@@ -1,0 +1,18 @@
+.Menu {
+    padding: 8px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    position: static;
+
+    text-transform: capitalize;
+}
+
+.SearchText {
+    margin-left: 10px;
+
+    color: white;
+
+}

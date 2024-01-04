@@ -21,9 +21,10 @@ export function Menu({
             className={style.Menu}
         >
             <Typography
-                variant="h6"
+                data-testid="title"
                 fontWeight="600"
                 textTransform="capitalize"
+                variant="h6"
             >
                 {TITLE}
             </Typography>
@@ -41,6 +42,7 @@ export function Menu({
                 </>
             )}
             <IconButton
+                data-testid="button"
                 onClick={isAuthenticated ? handleLogout : handleLogin}
                 sx={isAuthenticated ? {
                     color: "white",

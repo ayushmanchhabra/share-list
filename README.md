@@ -6,11 +6,15 @@ A website to share music with family and friends across music streaming services
 
 ## Problem Statement
 
-I wanted a service which would allow me to create custom playlists using the music streaming service of my choice, send it to my friends and they could directly play the music via _their_ music streaming service of choice. My friend should be able to make changes to this playlist and share it forward to someone they thinks would enjoy it.
+I wanted a service to create custom music playlists using the streaming service of my choice such that when I send it to my friends, they can directly play the music via _their_ streaming service of choice. My friend should be able to make changes to this playlist and share it to someone they think will enjoy it, continuing the cycle.
+
+## Strategy
+
+A class of software products that have found extreme success is usually when the user is able to create something and have a sense of ownership, for example [Notion](https://www.notion.so/). Unlike Notion, the utility gained is not from creating for self but sharing with others.
+
+The core idea used is [storing app state in URLs](https://www.scottantipa.com/store-app-state-in-urls). This allows us to _not_ use a database which reduces the total variable cost significantly from what it could be.
 
 ## User Interface
-
-The core idea used is [storing app state in URLs](https://www.scottantipa.com/store-app-state-in-urls). This allows us to _not_ use a database.
 
 The website will ask you to login to your service of choice (Apple Music, Spotify or YouTube). You will be redirected to a dashboard where you can create custom playlists (we will call them `share lists`). You will be able to:
 
@@ -21,3 +25,7 @@ The website will ask you to login to your service of choice (Apple Music, Spotif
 ## Technical Implementation
 
 Sharing the playlist is as simple as sharing the link since the app state is stored in the URL. Since the website is a SPA, we use [OAuth with Proof of Key Exchange](https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow) to authenticate with Spotify.
+
+## Contributing
+
+To open a bug report or to add a feature request, open a PR and edit `ROADMAP.md`. Once that bug is resolved/feature is implemented, it will be moved to the `CHANGELOG.md`.

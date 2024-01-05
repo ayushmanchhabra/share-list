@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
-import { Menu } from "components";
+
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
+import { Menu } from "components";
 import { Home, List, Login } from "routes";
 
 export function App() {

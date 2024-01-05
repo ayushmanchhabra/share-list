@@ -22,6 +22,33 @@ The website will ask you to login to your service of choice (Apple Music, Spotif
 - make some changes and forward it to another friend
 - export it to your streaming service and listen directly via your music app
 
+## Technology Stack
+
+### UI
+
+- HTML5, CSS3, JavaScript
+- React, MUI5, Typescript
+
+### API
+
+- Apple MusicKit
+- Spotify Web API and Web Playback SDK
+- Stripe Elements and API
+- YouTube Data API
+
+### Testing
+
+- DOM Testing Library
+- React Testing Library
+- Nightwatch (Selenium)
+- Storybook?
+- Vitest
+
+### CI/CD
+
+- GitHub Actions for testing
+- Vercel for deploys
+
 ## Technical Implementation
 
 Sharing the playlist is as simple as sharing the link since the app state is stored in the URL. Since the website is a SPA, we use [OAuth with Proof of Key Exchange](https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow) to authenticate with Spotify.

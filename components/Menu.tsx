@@ -1,20 +1,25 @@
 import { Login, Logout, Search } from "@mui/icons-material";
 import { AppBar, IconButton, TextField, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import { TITLE } from "./Menu.content.ts";
 import style from "./Menu.module.scss";
 
 interface MenuProps {
     isAuthenticated: boolean;
-    handleLogin: () => void;
-    handleLogout: () => void;
 }
 
 export function Menu({
-    isAuthenticated,
-    handleLogin,
-    handleLogout,
+    isAuthenticated
 }: MenuProps) {
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate("/login");
+    };
+    const handleLogout = () => {};
+
     return (
         <AppBar
             position="static"

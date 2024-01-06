@@ -34,7 +34,7 @@ export function Menu({
                 {TITLE}
             </Typography>
             {isAuthenticated && (
-                <>
+                <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
                     <Search />
                     <TextField
                         fullWidth
@@ -44,7 +44,7 @@ export function Menu({
                         placeholder="Search..."
                         variant="standard"
                     />
-                </>
+                </div>
             )}
             <IconButton
                 data-testid="button"

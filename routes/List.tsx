@@ -15,6 +15,7 @@ import {
   UserStatusSchema,
   deserialiseService,
   serialiseService,
+  useUser,
 } from "providers";
 import { useSpotify } from "providers";
 
@@ -44,6 +45,14 @@ export function List() {
     import.meta.env.VITE_SPOTIFY_REDIRECT_URI,
     Scopes.userDetails,
   );
+
+  const { user } = useUser();
+
+  useEffect(() => {
+    if (!user.isAuthenticated) {
+      navigate("/login");
+    }
+  },[user]);
 
   useEffect(() => {
     if (api !== null) {

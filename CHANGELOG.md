@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.8.0] - 2024-01-04
+
+### Added
+
+- MUI App Bar to act as a Menu.
+
 ### Changed
 
 - Refactor Home route test suite.
@@ -14,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Switch from `pnpm` to `npm` package manager.
 - Update landing page.
 
-## Removed
+### Removed
 
 - npm package `prettier`.
 - Getting started button.

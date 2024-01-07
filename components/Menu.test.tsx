@@ -14,8 +14,6 @@ describe("Home route", () => {
       <MemoryRouter>
         <Menu
           isAuthenticated={false}
-          handleLogin={() => { }}
-          handleLogout={() => { }}
         />
       </MemoryRouter>,
     );

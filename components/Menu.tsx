@@ -1,58 +1,67 @@
 import { Login, Logout, Search } from "@mui/icons-material";
 import { AppBar, IconButton, TextField, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import { TITLE } from "./Menu.content.ts";
 import style from "./Menu.module.scss";
 
 interface MenuProps {
     isAuthenticated: boolean;
-    handleLogin: () => void;
-    handleLogout: () => void;
 }
 
 export function Menu({
-    isAuthenticated,
-    handleLogin,
-    handleLogout,
+    isAuthenticated
 }: MenuProps) {
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate("/login");
+    };
+
+    const handleLogout = () => {
+        navigate("/logout");
+    };
+
     return (
         <AppBar
             position="static"
             className={style.Menu}
+            sx={{ flexDirection: "row" }}
         >
             <Typography
                 data-testid="title"
                 fontWeight="600"
                 textTransform="capitalize"
                 variant="h6"
+                sx={{
+                    width: "max-content",
+                    flex: 1,
+                }}
             >
                 {TITLE}
             </Typography>
+            {isAuthenticated && <Search />}
             {isAuthenticated && (
-                <>
-                    <Search />
-                    <TextField
-                        fullWidth
-                        inputProps={{
-                            className: style.SearchText
-                        }}
-                        placeholder="Search..."
-                        variant="standard"
-                    />
-                </>
+                <TextField
+                    inputProps={{
+                        className: style.SearchText
+                    }}
+                    placeholder="Search..."
+                    sx={{ flex: 3 }}
+                    variant="standard"
+                />
             )}
             <IconButton
                 data-testid="button"
                 onClick={isAuthenticated ? handleLogout : handleLogin}
-                sx={isAuthenticated ? {
+                sx={{
                     color: "white",
-                } : {
-                    color: "white",
-                    position: "absolute",
-                    right: "10px"
-                }}>
+                    flex: 0
+                }}
+            >
                 {isAuthenticated ? <Logout /> : <Login />}
             </IconButton>
-        </AppBar>
+        </AppBar >
     );
 }

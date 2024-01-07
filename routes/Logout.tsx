@@ -3,56 +3,50 @@ import {
     Apple as AppleIcon,
     YouTube as YouTubeIcon,
 } from "@mui/icons-material";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { SpotifyIcon } from "assets";
 import { useUser } from "providers";
 
-export function Login() {
+export function Logout() {
 
     const navigate = useNavigate();
 
     const { user, setUser } = useUser();
 
-    useEffect(() => {
-        if (user.isAuthenticated) {
-            navigate("/dashboard");
-        }
-    }, [user]);
-
-    const onSpotifyLogin = () => {
-        setUser({ ...user, isAuthenticated: true });
+    const onSpotifyLogout = () => {
+        setUser({ ...user, isAuthenticated: false });
+        navigate("/home");
     };
 
     return (
         <Card>
             <CardHeader
-                title={"Login"}
+                title={"Logout"}
             />
             <CardContent>
-                <Typography sx={{ display: "flex", alignItems: "center", justifyContent: "center"}}>Log into Share List via:</Typography>
+                <Typography sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>Are you sure you want to log out?</Typography>
             </CardContent>
 
             <CardActions>
                 {import.meta.env.VITE_ENABLE_APPLE_MUSIC === "1" && (
                     <Button>
                         <AppleIcon />
-                        Apple Music
+                        Logout
                     </Button>
                 )}
                 {import.meta.env.VITE_ENABLE_SPOTIFY_MUSIC === "1" && (
-                    <Button onClick={onSpotifyLogin}>
+                    <Button onClick={onSpotifyLogout}>
                         <SvgIcon>
                             <SpotifyIcon />
                         </SvgIcon>
-                        Spotify Music
+                        Logout
                     </Button>
                 )}
                 {import.meta.env.VITE_ENABLE_YOUTUBE_MUSIC === "1" && (
                     <Button>
                         <YouTubeIcon />
-                        YouTube Music
+                        Logout
                     </Button>
                 )}
             </CardActions>

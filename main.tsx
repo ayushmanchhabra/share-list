@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Menu } from "components";
 import { useUser } from "providers";
-import { Home, List, Login } from "routes";
+import { Home, List, Login, Logout } from "routes";
 import { Dashboard } from "routes";
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
             </Route>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
           </Routes>
         </Router>
       </UserProvider>
